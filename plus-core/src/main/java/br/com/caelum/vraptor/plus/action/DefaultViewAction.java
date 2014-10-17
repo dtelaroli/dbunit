@@ -3,7 +3,7 @@ package br.com.caelum.vraptor.plus.action;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.plus.Database;
-import br.com.caelum.vraptor.plus.db.GetDb;
+import static br.com.caelum.vraptor.plus.Databases.load;
 
 public class DefaultViewAction implements ViewAction {
 
@@ -23,7 +23,7 @@ public class DefaultViewAction implements ViewAction {
 
 	@Override
 	public <T> T get(Class<T> type, long id) {
-		return db.use(GetDb.class).get(type, id);
+		return db.use(load()).get(type, id);
 	}
 
 }

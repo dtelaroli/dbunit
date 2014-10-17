@@ -1,11 +1,12 @@
 package br.com.caelum.vraptor.plus.action;
 
+import static br.com.caelum.vraptor.plus.Databases.paginate;
+
 import java.util.List;
 
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.plus.Database;
-import br.com.caelum.vraptor.plus.db.PaginateDb;
 
 public class DefaultPaginateAllAction implements PaginateAction {
 
@@ -27,7 +28,7 @@ public class DefaultPaginateAllAction implements PaginateAction {
 
 	@Override
 	public <T> List<T> all(Class<T> type) {
-		return db.use(PaginateDb.class).all(type, first, limit);
+		return db.use(paginate()).all(type, first, limit);
 	}
 
 	@Override

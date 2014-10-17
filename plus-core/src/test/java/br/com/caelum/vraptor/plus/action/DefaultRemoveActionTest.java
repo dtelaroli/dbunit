@@ -11,20 +11,20 @@ import org.mockito.MockitoAnnotations;
 
 import br.com.caelum.vraptor.plus.Database;
 import br.com.caelum.vraptor.plus.MyModel;
-import br.com.caelum.vraptor.plus.db.GetDb;
+import br.com.caelum.vraptor.plus.db.LoadDb;
 
 public class DefaultRemoveActionTest {
 
 	private ViewAction act;
 	@Mock private Database db;
-	@Mock private GetDb getDb;
+	@Mock private LoadDb getDb;
 	
 	@Before
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
 		
 		when(getDb.get(MyModel.class, 1L)).thenReturn(new MyModel());
-		when(db.use(GetDb.class)).thenReturn(getDb);
+		when(db.use(LoadDb.class)).thenReturn(getDb);
 		
 		act = new DefaultViewAction(db);
 	}

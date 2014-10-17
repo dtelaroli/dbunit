@@ -1,12 +1,13 @@
 package br.com.caelum.vraptor.plus.action;
 
+import static br.com.caelum.vraptor.plus.Databases.listAll;
+
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.plus.Database;
-import br.com.caelum.vraptor.plus.db.ListAllDb;
 
 @RequestScoped
 public class DefaultListAllAction implements ListAllAction {
@@ -27,7 +28,7 @@ public class DefaultListAllAction implements ListAllAction {
 	
 	@Override
 	public <T> List<T> all(Class<T> type) {
-		return db.use(ListAllDb.class).all(type);
+		return db.use(listAll()).all(type);
 	}
 
 }

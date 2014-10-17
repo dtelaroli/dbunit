@@ -5,8 +5,8 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import br.com.caelum.vraptor.plus.db.GetDb;
 import br.com.caelum.vraptor.plus.db.ListAllDb;
+import br.com.caelum.vraptor.plus.db.LoadDb;
 import br.com.caelum.vraptor.plus.db.PaginateDb;
 import br.com.caelum.vraptor.plus.db.RemoveDb;
 
@@ -19,7 +19,7 @@ public class DatabasesTest {
 	
 	@Test
 	public void shouldReturnViewAction() {
-		assertThat(Databases.get(), typeCompatibleWith(GetDb.class));
+		assertThat(Databases.load(), typeCompatibleWith(LoadDb.class));
 	}
 	
 	@Test

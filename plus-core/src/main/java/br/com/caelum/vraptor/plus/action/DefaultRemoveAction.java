@@ -1,9 +1,10 @@
 package br.com.caelum.vraptor.plus.action;
 
+import static br.com.caelum.vraptor.plus.Databases.remove;
+
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.plus.Database;
-import br.com.caelum.vraptor.plus.db.RemoveDb;
 
 public class DefaultRemoveAction implements RemoveAction {
 
@@ -23,7 +24,7 @@ public class DefaultRemoveAction implements RemoveAction {
 
 	@Override
 	public <T> void by(Class<T> type, Long id) {
-		db.use(RemoveDb.class).by(type, id);
+		db.use(remove()).by(type, id);
 	}
 
 }
