@@ -1,4 +1,5 @@
-package br.com.caelum.vraptor.plus;
+package br.com.caelum.vraptor.plus.api;
+
 
 
 public interface Action {

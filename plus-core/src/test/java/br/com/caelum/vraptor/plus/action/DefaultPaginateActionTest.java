@@ -1,5 +1,6 @@
 package br.com.caelum.vraptor.plus.action;
 
+import static br.com.caelum.vraptor.plus.api.Databases.paginate;
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.not;
@@ -14,9 +15,10 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import br.com.caelum.vraptor.plus.Database;
 import br.com.caelum.vraptor.plus.MyModel;
-import br.com.caelum.vraptor.plus.db.PaginateDb;
+import br.com.caelum.vraptor.plus.api.Database;
+import br.com.caelum.vraptor.plus.api.action.PaginateAction;
+import br.com.caelum.vraptor.plus.api.db.PaginateDb;
 
 public class DefaultPaginateActionTest {
 
@@ -29,7 +31,7 @@ public class DefaultPaginateActionTest {
 		MockitoAnnotations.initMocks(this);
 		
 		when(listDb.all(MyModel.class, 10, 10)).thenReturn(Arrays.asList(new MyModel()));
-		when(db.use(PaginateDb.class)).thenReturn(listDb);
+		when(db.use(paginate())).thenReturn(listDb);
 		
 		act = new DefaultPaginateAllAction(db);
 	}

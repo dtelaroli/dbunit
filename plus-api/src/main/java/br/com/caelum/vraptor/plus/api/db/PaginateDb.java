@@ -1,8 +1,8 @@
-package br.com.caelum.vraptor.plus.db;
+package br.com.caelum.vraptor.plus.api.db;
 
 import java.util.List;
 
-import br.com.caelum.vraptor.plus.Db;
+import br.com.caelum.vraptor.plus.api.Db;
 
 public interface PaginateDb extends Db {
 

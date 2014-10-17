@@ -1,5 +1,6 @@
 package br.com.caelum.vraptor.plus.action;
 
+import static br.com.caelum.vraptor.plus.api.Databases.listAll;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
@@ -11,9 +12,10 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import br.com.caelum.vraptor.plus.Database;
 import br.com.caelum.vraptor.plus.MyModel;
-import br.com.caelum.vraptor.plus.db.ListAllDb;
+import br.com.caelum.vraptor.plus.api.Database;
+import br.com.caelum.vraptor.plus.api.action.ListAllAction;
+import br.com.caelum.vraptor.plus.api.db.ListAllDb;
 
 public class DefaultListAllActionTest {
 
@@ -26,7 +28,7 @@ public class DefaultListAllActionTest {
 		MockitoAnnotations.initMocks(this);
 		
 		when(listDb.all(MyModel.class)).thenReturn(Arrays.asList(new MyModel()));
-		when(db.use(ListAllDb.class)).thenReturn(listDb);
+		when(db.use(listAll())).thenReturn(listDb);
 		
 		act = new DefaultListAllAction(db);
 	}

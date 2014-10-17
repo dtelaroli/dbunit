@@ -1,10 +1,11 @@
 package br.com.caelum.vraptor.plus.action;
 
-import static br.com.caelum.vraptor.plus.Databases.remove;
+import static br.com.caelum.vraptor.plus.api.Databases.remove;
 
 import javax.inject.Inject;
 
-import br.com.caelum.vraptor.plus.Database;
+import br.com.caelum.vraptor.plus.api.Database;
+import br.com.caelum.vraptor.plus.api.action.RemoveAction;
 
 public class DefaultRemoveAction implements RemoveAction {
 

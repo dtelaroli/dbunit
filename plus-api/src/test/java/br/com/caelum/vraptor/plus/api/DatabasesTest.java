@@ -1,14 +1,14 @@
-package br.com.caelum.vraptor.plus;
+package br.com.caelum.vraptor.plus.api;
 
 import static org.hamcrest.Matchers.typeCompatibleWith;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import br.com.caelum.vraptor.plus.db.ListAllDb;
-import br.com.caelum.vraptor.plus.db.LoadDb;
-import br.com.caelum.vraptor.plus.db.PaginateDb;
-import br.com.caelum.vraptor.plus.db.RemoveDb;
+import br.com.caelum.vraptor.plus.api.db.ListAllDb;
+import br.com.caelum.vraptor.plus.api.db.LoadDb;
+import br.com.caelum.vraptor.plus.api.db.PaginateDb;
+import br.com.caelum.vraptor.plus.api.db.RemoveDb;
 
 public class DatabasesTest {
 

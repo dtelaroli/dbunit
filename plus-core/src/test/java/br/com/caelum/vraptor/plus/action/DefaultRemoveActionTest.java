@@ -1,5 +1,6 @@
 package br.com.caelum.vraptor.plus.action;
 
+import static br.com.caelum.vraptor.plus.api.Databases.load;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
@@ -9,9 +10,10 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import br.com.caelum.vraptor.plus.Database;
 import br.com.caelum.vraptor.plus.MyModel;
-import br.com.caelum.vraptor.plus.db.LoadDb;
+import br.com.caelum.vraptor.plus.api.Database;
+import br.com.caelum.vraptor.plus.api.action.ViewAction;
+import br.com.caelum.vraptor.plus.api.db.LoadDb;
 
 public class DefaultRemoveActionTest {
 
@@ -24,7 +26,7 @@ public class DefaultRemoveActionTest {
 		MockitoAnnotations.initMocks(this);
 		
 		when(getDb.get(MyModel.class, 1L)).thenReturn(new MyModel());
-		when(db.use(LoadDb.class)).thenReturn(getDb);
+		when(db.use(load())).thenReturn(getDb);
 		
 		act = new DefaultViewAction(db);
 	}

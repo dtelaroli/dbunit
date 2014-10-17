@@ -1,15 +1,14 @@
-package br.com.caelum.vraptor.plus;
+package br.com.caelum.vraptor.plus.api;
 
 import static org.hamcrest.Matchers.typeCompatibleWith;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import br.com.caelum.vraptor.plus.Actions;
-import br.com.caelum.vraptor.plus.action.ListAllAction;
-import br.com.caelum.vraptor.plus.action.PaginateAction;
-import br.com.caelum.vraptor.plus.action.RemoveAction;
-import br.com.caelum.vraptor.plus.action.ViewAction;
+import br.com.caelum.vraptor.plus.api.action.ListAllAction;
+import br.com.caelum.vraptor.plus.api.action.PaginateAction;
+import br.com.caelum.vraptor.plus.api.action.RemoveAction;
+import br.com.caelum.vraptor.plus.api.action.ViewAction;
 
 public class ActionsTest {
 

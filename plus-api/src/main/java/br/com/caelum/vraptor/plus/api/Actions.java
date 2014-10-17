@@ -1,9 +1,9 @@
-package br.com.caelum.vraptor.plus;
+package br.com.caelum.vraptor.plus.api;
 
-import br.com.caelum.vraptor.plus.action.ListAllAction;
-import br.com.caelum.vraptor.plus.action.PaginateAction;
-import br.com.caelum.vraptor.plus.action.RemoveAction;
-import br.com.caelum.vraptor.plus.action.ViewAction;
+import br.com.caelum.vraptor.plus.api.action.ListAllAction;
+import br.com.caelum.vraptor.plus.api.action.PaginateAction;
+import br.com.caelum.vraptor.plus.api.action.RemoveAction;
+import br.com.caelum.vraptor.plus.api.action.ViewAction;
 
 public class Actions {
 

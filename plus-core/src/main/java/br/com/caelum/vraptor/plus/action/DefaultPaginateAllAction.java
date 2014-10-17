@@ -1,12 +1,13 @@
 package br.com.caelum.vraptor.plus.action;
 
-import static br.com.caelum.vraptor.plus.Databases.paginate;
+import static br.com.caelum.vraptor.plus.api.Databases.paginate;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
-import br.com.caelum.vraptor.plus.Database;
+import br.com.caelum.vraptor.plus.api.Database;
+import br.com.caelum.vraptor.plus.api.action.PaginateAction;
 
 public class DefaultPaginateAllAction implements PaginateAction {
 

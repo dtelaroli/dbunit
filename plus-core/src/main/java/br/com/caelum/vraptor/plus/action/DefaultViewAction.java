@@ -1,9 +1,11 @@
 package br.com.caelum.vraptor.plus.action;
 
+import static br.com.caelum.vraptor.plus.api.Databases.load;
+
 import javax.inject.Inject;
 
-import br.com.caelum.vraptor.plus.Database;
-import static br.com.caelum.vraptor.plus.Databases.load;
+import br.com.caelum.vraptor.plus.api.Database;
+import br.com.caelum.vraptor.plus.api.action.ViewAction;
 
 public class DefaultViewAction implements ViewAction {
 

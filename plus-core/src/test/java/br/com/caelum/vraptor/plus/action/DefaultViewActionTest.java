@@ -1,5 +1,6 @@
 package br.com.caelum.vraptor.plus.action;
 
+import static br.com.caelum.vraptor.plus.api.Databases.remove;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 
@@ -8,9 +9,10 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import br.com.caelum.vraptor.plus.Database;
 import br.com.caelum.vraptor.plus.MyModel;
-import br.com.caelum.vraptor.plus.db.RemoveDb;
+import br.com.caelum.vraptor.plus.api.Database;
+import br.com.caelum.vraptor.plus.api.action.RemoveAction;
+import br.com.caelum.vraptor.plus.api.db.RemoveDb;
 
 public class DefaultViewActionTest {
 
@@ -24,7 +26,7 @@ public class DefaultViewActionTest {
 		
 		doThrow(Exception.class).when(removeDb).by(null, 0l);
 		
-		when(db.use(RemoveDb.class)).thenReturn(removeDb);
+		when(db.use(remove())).thenReturn(removeDb);
 		
 		act = new DefaultRemoveAction(db);
 	}
