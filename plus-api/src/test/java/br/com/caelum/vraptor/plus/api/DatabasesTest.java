@@ -1,5 +1,9 @@
 package br.com.caelum.vraptor.plus.api;
 
+import static br.com.caelum.vraptor.plus.api.Databases.listAll;
+import static br.com.caelum.vraptor.plus.api.Databases.load;
+import static br.com.caelum.vraptor.plus.api.Databases.paginate;
+import static br.com.caelum.vraptor.plus.api.Databases.remove;
 import static org.hamcrest.Matchers.typeCompatibleWith;
 import static org.junit.Assert.assertThat;
 
@@ -14,22 +18,22 @@ public class DatabasesTest {
 
 	@Test
 	public void shouldReturnListAllAction() {
-		assertThat(Databases.listAll(), typeCompatibleWith(ListAllDb.class));
+		assertThat(listAll(), typeCompatibleWith(ListAllDb.class));
 	}
 	
 	@Test
 	public void shouldReturnViewAction() {
-		assertThat(Databases.load(), typeCompatibleWith(LoadDb.class));
+		assertThat(load(), typeCompatibleWith(LoadDb.class));
 	}
 	
 	@Test
 	public void shouldReturnPaginateAction() {
-		assertThat(Databases.paginate(), typeCompatibleWith(PaginateDb.class));
+		assertThat(paginate(), typeCompatibleWith(PaginateDb.class));
 	}
 	
 	@Test
 	public void shouldReturnRemoveAction() {
-		assertThat(Databases.remove(), typeCompatibleWith(RemoveDb.class));
+		assertThat(remove(), typeCompatibleWith(RemoveDb.class));
 	}
 
 }

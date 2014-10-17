@@ -1,5 +1,9 @@
 package br.com.caelum.vraptor.plus.api;
 
+import static br.com.caelum.vraptor.plus.api.Actions.listAll;
+import static br.com.caelum.vraptor.plus.api.Actions.paginate;
+import static br.com.caelum.vraptor.plus.api.Actions.remove;
+import static br.com.caelum.vraptor.plus.api.Actions.view;
 import static org.hamcrest.Matchers.typeCompatibleWith;
 import static org.junit.Assert.assertThat;
 
@@ -14,22 +18,22 @@ public class ActionsTest {
 
 	@Test
 	public void shouldReturnListAllAction() {
-		assertThat(Actions.listAll(), typeCompatibleWith(ListAllAction.class));
+		assertThat(listAll(), typeCompatibleWith(ListAllAction.class));
 	}
 	
 	@Test
 	public void shouldReturnViewAction() {
-		assertThat(Actions.view(), typeCompatibleWith(ViewAction.class));
+		assertThat(view(), typeCompatibleWith(ViewAction.class));
 	}
 	
 	@Test
 	public void shouldReturnPaginateAction() {
-		assertThat(Actions.paginate(), typeCompatibleWith(PaginateAction.class));
+		assertThat(paginate(), typeCompatibleWith(PaginateAction.class));
 	}
 	
 	@Test
 	public void shouldReturnRemoveAction() {
-		assertThat(Actions.remove(), typeCompatibleWith(RemoveAction.class));
+		assertThat(remove(), typeCompatibleWith(RemoveAction.class));
 	}
 
 }
