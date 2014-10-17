@@ -1,0 +1,2 @@
+txn[1003], 16:54:43.471, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1003], 16:54:43.481, FindBean type[MyModel] origin[Z0orA.C5XUBI.BvQ02m] exeMicros[9895] rows[0] bind[1] 
