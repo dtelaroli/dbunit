@@ -18,11 +18,17 @@
 			<artifactId>plus-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.avaje</groupId>
 			<artifactId>ebean</artifactId>
 			<version>${ebean.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>br.com.caelum.vraptor</groupId>
+			<artifactId>plus-dbunit</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>

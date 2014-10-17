@@ -22,14 +22,14 @@ public class DbUnit {
 		this.conn = conn;
 	}
 
-	@SuppressWarnings("unchecked")
-	public <T> void init(Class<T>... types) throws Exception {
+	@SafeVarargs
+	public final <T> void init(Class<T>... types) throws Exception {
 		for (Class<T> type : types) {
 			initOne(type);
 		}
 	}
 
-	private <T> void initOne(Class<T> type) throws DatabaseUnitException, SQLException, FileNotFoundException {
+	protected <T> void initOne(Class<T> type) throws DatabaseUnitException, SQLException, FileNotFoundException {
 		DatabaseOperation.INSERT.execute(getConnection(), getDataSet(type));
 	}
 

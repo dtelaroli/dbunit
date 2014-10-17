@@ -12,24 +12,4 @@
 	<name>plus-dbunit</name>
 	<url>http://maven.apache.org</url>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.dbunit</groupId>
-			<artifactId>dbunit</artifactId>
-			<version>${dbunit.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.avaje</groupId>
-			<artifactId>ebean</artifactId>
-			<version>${ebean.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>${h2.version}</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
 </project>
