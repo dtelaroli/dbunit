@@ -8,28 +8,28 @@
     </appender>
     
     <category name="br.com.caelum.vraptor">
-        <priority value="DEBUG" /> 
+        <priority value="INFO" /> 
         <appender-ref ref="stdout" />
     </category>
 
     <category name="org.jboss">
-        <priority value="DEBUG" />
+        <priority value="INFO" />
         <appender-ref ref="stdout" />
     </category>
     <category name="org.hibernate">
-        <priority value="DEBUG" />
+        <priority value="INFO" />
         <appender-ref ref="stdout" />
     </category>
     <category name="com.avaje">
-        <priority value="DEBUG" />
+        <priority value="INFO" />
         <appender-ref ref="stdout" />
     </category>
     <category name="org.avaje.ebean">
-        <priority value="DEBUG" />
+        <priority value="INFO" />
         <appender-ref ref="stdout" />
     </category>
     <category name="org.dbunit">
-        <priority value="DEBUG" />
+        <priority value="INFO" />
         <appender-ref ref="stdout" />
     </category>
     

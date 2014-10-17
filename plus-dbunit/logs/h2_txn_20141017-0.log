@@ -2,3 +2,21 @@ txn[1003], 19:12:15.710, select t0.id c0, t0.name c1  from my_model t0 where t0.
 txn[1003], 19:12:15.714, FindBean type[MyModel] origin[Z0oq9.C5XUBI.BvQ02m] exeMicros[3483] rows[1] bind[1] 
 txn[1003], 19:14:54.443, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
 txn[1003], 19:14:54.446, FindBean type[MyModel] origin[Z0oq9.C5XUBI.BvQ02m] exeMicros[3562] rows[1] bind[1] 
+txn[1004], 19:35:18.674, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 19:35:18.678, FindBean type[MyModel] origin[BpYE2_.C5XUBI.BvQ02m] exeMicros[3715] rows[1] bind[1] 
+txn[1004], 19:36:10.197, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 19:36:10.201, FindBean type[MyModel] origin[BpYE2_.C5XUBI.BvQ02m] exeMicros[4036] rows[1] bind[1] 
+txn[1004], 19:44:45.620, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 19:44:45.624, FindBean type[MyModel] origin[BpYE2_.C5XUBI.BvQ02m] exeMicros[3829] rows[1] bind[1] 
+txn[1004], 19:45:29.094, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 19:45:29.098, FindBean type[MyModel] origin[BpYE2_.C5XUBI.BvQ02m] exeMicros[3845] rows[1] bind[1] 
+txn[1004], 19:49:06.322, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 19:49:06.326, FindBean type[MyModel] origin[BpYE2_.C5XUBI.BvQ02m] exeMicros[3647] rows[1] bind[1] 
+txn[1004], 19:49:15.303, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 19:49:15.307, FindBean type[MyModel] origin[BpYE2_.C5XUBI.BvQ02m] exeMicros[3859] rows[1] bind[1] 
+txn[1003], 19:53:47.392, Rollback 
+txn[1004], 19:55:16.090, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 19:55:16.094, FindBean type[MyModel] origin[BpYE2_.C5XUBI.BvQ02m] exeMicros[3831] rows[1] bind[1] 
+txn[1003], 19:55:26.089, Rollback 
+txn[1004], 20:00:09.138, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 20:00:09.142, FindBean type[MyModel] origin[BpYE2_.C5XUBI.BvQ02m] exeMicros[3828] rows[1] bind[1] 
