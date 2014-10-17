@@ -15,6 +15,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import br.com.caelum.vraptor.plus.Database;
+import br.com.caelum.vraptor.plus.MyModel;
 import br.com.caelum.vraptor.plus.db.PaginateDb;
 
 public class DefaultPaginateActionTest {
