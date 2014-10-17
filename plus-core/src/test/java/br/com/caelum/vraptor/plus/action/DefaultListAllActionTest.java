@@ -14,7 +14,7 @@ import org.mockito.MockitoAnnotations;
 import br.com.caelum.vraptor.plus.Database;
 import br.com.caelum.vraptor.plus.db.ListAllDb;
 
-public class DefaultListAllTest {
+public class DefaultListAllActionTest {
 
 	private ListAllAction act;
 	@Mock private Database db;
