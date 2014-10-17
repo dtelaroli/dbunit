@@ -14,7 +14,7 @@ public class DefaultListAllAction implements ListAllAction {
 	private final Database db;
 
 	/**
-	 * @deprecated
+	 * @deprecated CDI eyes-only
 	 */
 	protected DefaultListAllAction() {
 		this(null);

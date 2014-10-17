@@ -4,6 +4,6 @@ import br.com.caelum.vraptor.plus.Act;
 
 public interface ViewAction extends Act {
 
-	<T> T get(Class<T> type, Object object);
+	<T> T get(Class<T> type, long id);
 	
 }
