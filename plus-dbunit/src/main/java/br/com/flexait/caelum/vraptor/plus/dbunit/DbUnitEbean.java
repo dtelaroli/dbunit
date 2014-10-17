@@ -6,11 +6,12 @@ import java.sql.SQLException;
 import org.dbunit.DatabaseUnitException;
 
 import com.avaje.ebean.Ebean;
+import com.avaje.ebean.TxIsolation;
 
 public class DbUnitEbean extends DbUnit {
 
 	public DbUnitEbean() {
-		super(Ebean.beginTransaction().getConnection());
+		super(Ebean.beginTransaction(TxIsolation.READ_COMMITED).getConnection());
 	}
 
 	@Override

@@ -42,7 +42,7 @@ public class DbUnit {
 
 	protected <T> void initOne(Class<T> type) throws DatabaseUnitException,
 			SQLException, FileNotFoundException {
-		DatabaseOperation.INSERT.execute(getConnection(), getDataSet(type));
+		DatabaseOperation.CLEAN_INSERT.execute(getConnection(), getDataSet(type));
 	}
 
 	protected IDatabaseConnection getConnection() throws DatabaseUnitException,
