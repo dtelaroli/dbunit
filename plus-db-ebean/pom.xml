@@ -14,9 +14,21 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>br.com.caelum</groupId>
+			<artifactId>vraptor</artifactId>
+			<version>4.1.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<version>${cdi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>br.com.caelum.vraptor</groupId>
 			<artifactId>plus-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.avaje</groupId>
