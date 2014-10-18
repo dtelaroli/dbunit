@@ -3,6 +3,7 @@ package br.com.caelum.vraptor.plus.api;
 import static br.com.caelum.vraptor.plus.api.Actions.listAll;
 import static br.com.caelum.vraptor.plus.api.Actions.paginate;
 import static br.com.caelum.vraptor.plus.api.Actions.remove;
+import static br.com.caelum.vraptor.plus.api.Actions.save;
 import static br.com.caelum.vraptor.plus.api.Actions.view;
 import static org.hamcrest.Matchers.typeCompatibleWith;
 import static org.junit.Assert.assertThat;
@@ -12,6 +13,7 @@ import org.junit.Test;
 import br.com.caelum.vraptor.plus.api.action.ListAllAction;
 import br.com.caelum.vraptor.plus.api.action.PaginateAction;
 import br.com.caelum.vraptor.plus.api.action.RemoveAction;
+import br.com.caelum.vraptor.plus.api.action.SaveAction;
 import br.com.caelum.vraptor.plus.api.action.ViewAction;
 
 public class ActionsTest {
@@ -24,6 +26,11 @@ public class ActionsTest {
 	@Test
 	public void shouldReturnViewAction() {
 		assertThat(view(), typeCompatibleWith(ViewAction.class));
+	}
+	
+	@Test
+	public void shouldReturnSaveAction() {
+		assertThat(save(), typeCompatibleWith(SaveAction.class));
 	}
 	
 	@Test
