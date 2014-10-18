@@ -16,7 +16,7 @@ public class Databases {
 		return LoadDb.class;
 	}
 	
-	public static Class<SaveDb> save() {
+	public static Class<SaveDb> persist() {
 		return SaveDb.class;
 	}
 

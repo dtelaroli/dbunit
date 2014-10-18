@@ -17,4 +17,7 @@ hs_err_pid*
 **/.idea
 **/target
 **/logs
+**/h2_create.sql
+**/h2_drop.sql
 simple-cms.iml
+

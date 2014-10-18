@@ -3,8 +3,8 @@ package br.com.caelum.vraptor.plus.api;
 import static br.com.caelum.vraptor.plus.api.Databases.listAll;
 import static br.com.caelum.vraptor.plus.api.Databases.load;
 import static br.com.caelum.vraptor.plus.api.Databases.paginate;
+import static br.com.caelum.vraptor.plus.api.Databases.persist;
 import static br.com.caelum.vraptor.plus.api.Databases.remove;
-import static br.com.caelum.vraptor.plus.api.Databases.save;
 import static org.hamcrest.Matchers.typeCompatibleWith;
 import static org.junit.Assert.assertThat;
 
@@ -30,7 +30,7 @@ public class DatabasesTest {
 	
 	@Test
 	public void shouldReturnSaveDb() {
-		assertThat(save(), typeCompatibleWith(SaveDb.class));
+		assertThat(persist(), typeCompatibleWith(SaveDb.class));
 	}
 	
 	@Test
