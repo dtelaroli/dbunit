@@ -8,8 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.com.caelum.vraptor.plus.api.db.RemoveDb;
-import br.com.flexait.caelum.vraptor.plus.dbunit.DbUnit;
-import br.com.flexait.caelum.vraptor.plus.dbunit.DbUnitEbean;
+import br.com.caelum.vraptor.plus.dbunit.DbUnit;
+import br.com.caelum.vraptor.plus.dbunit.DbUnitEbean;
 
 import com.avaje.ebean.Ebean;
 

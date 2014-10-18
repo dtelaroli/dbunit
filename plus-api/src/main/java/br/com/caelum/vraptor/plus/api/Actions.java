@@ -20,11 +20,11 @@ public class Actions {
 		return SaveAction.class;
 	}
 
-	public static Class<PaginateAction> paginate() {
+	public static Class<PaginateAction> pagination() {
 		return PaginateAction.class;
 	}
 
-	public static Class<RemoveAction> remove() {
+	public static Class<RemoveAction> delete() {
 		return RemoveAction.class;
 	}
 

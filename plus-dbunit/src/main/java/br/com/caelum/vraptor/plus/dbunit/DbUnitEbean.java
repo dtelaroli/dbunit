@@ -1,4 +1,4 @@
-package br.com.flexait.caelum.vraptor.plus.dbunit;
+package br.com.caelum.vraptor.plus.dbunit;
 
 import java.io.FileNotFoundException;
 import java.sql.SQLException;

@@ -1,4 +1,4 @@
-package br.com.flexait.caelum.vraptor.plus.dbunit;
+package br.com.caelum.vraptor.plus.dbunit;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -113,7 +113,7 @@ public class DbUnit {
 
 	public void clean() throws DatabaseUnitException, SQLException {
 		for (int i = 0; i < connections.size(); i++) {
-			DatabaseOperation.TRUNCATE_TABLE.execute(connections.get(i), dataSets.get(i));
+			DatabaseOperation.DELETE_ALL.execute(connections.get(i), dataSets.get(i));
 		}
 	}
 

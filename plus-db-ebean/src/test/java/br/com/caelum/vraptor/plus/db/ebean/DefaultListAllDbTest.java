@@ -10,8 +10,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.com.caelum.vraptor.plus.api.db.FindDb;
-import br.com.flexait.caelum.vraptor.plus.dbunit.DbUnit;
-import br.com.flexait.caelum.vraptor.plus.dbunit.DbUnitEbean;
+import br.com.caelum.vraptor.plus.dbunit.DbUnit;
+import br.com.caelum.vraptor.plus.dbunit.DbUnitEbean;
 
 public class DefaultListAllDbTest {
 

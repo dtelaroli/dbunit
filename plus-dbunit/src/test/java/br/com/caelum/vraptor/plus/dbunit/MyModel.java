@@ -1,4 +1,4 @@
-package br.com.flexait.caelum.vraptor.plus.dbunit;
+package br.com.caelum.vraptor.plus.dbunit;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

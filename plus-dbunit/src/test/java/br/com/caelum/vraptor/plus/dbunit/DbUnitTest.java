@@ -1,4 +1,4 @@
-package br.com.flexait.caelum.vraptor.plus.dbunit;
+package br.com.caelum.vraptor.plus.dbunit;
 
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.nullValue;
@@ -7,35 +7,37 @@ import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.caelum.vraptor.plus.dbunit.DbUnit;
+
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.Transaction;
 
 public class DbUnitTest {
 
 	private DbUnit db;
-	private Transaction tx;
 	
 	@Before
 	public void setUp() throws Exception {
-		tx = Ebean.beginTransaction();
-		db = new DbUnit(tx.getConnection());
+		db = new DbUnit(Ebean.beginTransaction().getConnection());
 	}
 	
 	@Test
 	public void shouldInitTableMyModel() throws Exception {
+		Ebean.currentTransaction();
 		db.init(MyModel.class);
-		tx.commit();
+		Ebean.commitTransaction();
 		assertThat(Ebean.find(MyModel.class, 1L), instanceOf(MyModel.class));
 	}
 	
 	@Test
 	public void shouldCleanDatabase() throws Exception {
+		Ebean.currentTransaction();
 		db.init(MyModel.class);
 		assertThat(Ebean.find(MyModel.class, 1L), instanceOf(MyModel.class));
 
 		db.clean();
-		tx.addModification("my_model", false, false, true);
-		tx.commit();
+		Ebean.commitTransaction();
+		Ebean.endTransaction();
 		
 		assertThat(Ebean.find(MyModel.class, 1L), nullValue());
 	}

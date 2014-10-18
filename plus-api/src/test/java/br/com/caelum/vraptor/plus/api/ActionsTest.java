@@ -1,8 +1,8 @@
 package br.com.caelum.vraptor.plus.api;
 
+import static br.com.caelum.vraptor.plus.api.Actions.delete;
 import static br.com.caelum.vraptor.plus.api.Actions.listAll;
-import static br.com.caelum.vraptor.plus.api.Actions.paginate;
-import static br.com.caelum.vraptor.plus.api.Actions.remove;
+import static br.com.caelum.vraptor.plus.api.Actions.pagination;
 import static br.com.caelum.vraptor.plus.api.Actions.save;
 import static br.com.caelum.vraptor.plus.api.Actions.view;
 import static org.hamcrest.Matchers.typeCompatibleWith;
@@ -35,12 +35,12 @@ public class ActionsTest {
 	
 	@Test
 	public void shouldReturnPaginateAction() {
-		assertThat(paginate(), typeCompatibleWith(PaginateAction.class));
+		assertThat(pagination(), typeCompatibleWith(PaginateAction.class));
 	}
 	
 	@Test
 	public void shouldReturnRemoveAction() {
-		assertThat(remove(), typeCompatibleWith(RemoveAction.class));
+		assertThat(delete(), typeCompatibleWith(RemoveAction.class));
 	}
 
 }
