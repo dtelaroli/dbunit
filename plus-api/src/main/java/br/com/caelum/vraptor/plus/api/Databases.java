@@ -4,6 +4,7 @@ import br.com.caelum.vraptor.plus.api.db.ListAllDb;
 import br.com.caelum.vraptor.plus.api.db.LoadDb;
 import br.com.caelum.vraptor.plus.api.db.PaginateDb;
 import br.com.caelum.vraptor.plus.api.db.RemoveDb;
+import br.com.caelum.vraptor.plus.api.db.SaveDb;
 
 public class Databases {
 
@@ -13,6 +14,10 @@ public class Databases {
 
 	public static Class<LoadDb> load() {
 		return LoadDb.class;
+	}
+	
+	public static Class<SaveDb> save() {
+		return SaveDb.class;
 	}
 
 	public static Class<PaginateDb> paginate() {

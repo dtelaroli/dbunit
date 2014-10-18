@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.DatabaseConfig;
@@ -27,6 +29,8 @@ public class DbUnit {
 
 	private static final String DATASOURCE_PATH = "src/test/resources/datasets/";
 	private final Connection conn;
+	private List<IDatabaseConnection> connections = new ArrayList<>();
+	private List<IDataSet> dataSets = new ArrayList<>();
 
 	public DbUnit(Connection conn) {
 		this.conn = conn;
@@ -42,7 +46,12 @@ public class DbUnit {
 
 	protected <T> void initOne(Class<T> type) throws DatabaseUnitException,
 			SQLException, FileNotFoundException {
-		DatabaseOperation.CLEAN_INSERT.execute(getConnection(), getDataSet(type));
+		IDataSet dataSet = getDataSet(type);
+		IDatabaseConnection connection = getConnection();
+		dataSets.add(dataSet);
+		connections.add(connection);
+		
+		DatabaseOperation.CLEAN_INSERT.execute(connection, dataSet);
 	}
 
 	protected IDatabaseConnection getConnection() throws DatabaseUnitException,
@@ -100,6 +109,12 @@ public class DbUnit {
 		FileInputStream fileInputStream = new FileInputStream(name);
 
 		return new FlatXmlDataSetBuilder().build(fileInputStream);
+	}
+
+	public void clean() throws DatabaseUnitException, SQLException {
+		for (int i = 0; i < connections.size(); i++) {
+			DatabaseOperation.TRUNCATE_TABLE.execute(connections.get(i), dataSets.get(i));
+		}
 	}
 
 }

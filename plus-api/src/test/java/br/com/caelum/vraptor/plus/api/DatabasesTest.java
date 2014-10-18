@@ -4,6 +4,7 @@ import static br.com.caelum.vraptor.plus.api.Databases.listAll;
 import static br.com.caelum.vraptor.plus.api.Databases.load;
 import static br.com.caelum.vraptor.plus.api.Databases.paginate;
 import static br.com.caelum.vraptor.plus.api.Databases.remove;
+import static br.com.caelum.vraptor.plus.api.Databases.save;
 import static org.hamcrest.Matchers.typeCompatibleWith;
 import static org.junit.Assert.assertThat;
 
@@ -13,26 +14,32 @@ import br.com.caelum.vraptor.plus.api.db.ListAllDb;
 import br.com.caelum.vraptor.plus.api.db.LoadDb;
 import br.com.caelum.vraptor.plus.api.db.PaginateDb;
 import br.com.caelum.vraptor.plus.api.db.RemoveDb;
+import br.com.caelum.vraptor.plus.api.db.SaveDb;
 
 public class DatabasesTest {
 
 	@Test
-	public void shouldReturnListAllAction() {
+	public void shouldReturnListAllDb() {
 		assertThat(listAll(), typeCompatibleWith(ListAllDb.class));
 	}
 	
 	@Test
-	public void shouldReturnViewAction() {
+	public void shouldReturnViewDb() {
 		assertThat(load(), typeCompatibleWith(LoadDb.class));
 	}
 	
 	@Test
-	public void shouldReturnPaginateAction() {
+	public void shouldReturnSaveDb() {
+		assertThat(save(), typeCompatibleWith(SaveDb.class));
+	}
+	
+	@Test
+	public void shouldReturnPaginateDb() {
 		assertThat(paginate(), typeCompatibleWith(PaginateDb.class));
 	}
 	
 	@Test
-	public void shouldReturnRemoveAction() {
+	public void shouldReturnRemoveDb() {
 		assertThat(remove(), typeCompatibleWith(RemoveDb.class));
 	}
 

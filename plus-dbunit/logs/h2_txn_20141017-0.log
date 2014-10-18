@@ -20,3 +20,63 @@ txn[1004], 19:55:16.094, FindBean type[MyModel] origin[BpYE2_.C5XUBI.BvQ02m] exe
 txn[1003], 19:55:26.089, Rollback 
 txn[1004], 20:00:09.138, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
 txn[1004], 20:00:09.142, FindBean type[MyModel] origin[BpYE2_.C5XUBI.BvQ02m] exeMicros[3828] rows[1] bind[1] 
+txn[1003], 20:49:08.643, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1003], 20:49:08.654, FindBean type[MyModel] origin[9kCjE.C5XUBI.BvQ02m] exeMicros[10663] rows[0] bind[1] 
+txn[1003], 20:50:00.562, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1003], 20:50:00.565, FindBean type[MyModel] origin[9kCjD.C5XUBI.BvQ02m] exeMicros[3346] rows[1] bind[1] 
+txn[1004], 20:50:00.582, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 20:50:00.582, FindBean type[MyModel] origin[Z0oq-.C5XUBI.BvQ02m] exeMicros[156] rows[1] bind[1] 
+txn[1003], 20:57:09.242, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1003], 20:57:09.245, FindBean type[MyModel] origin[9kCjD.C5XUBI.BvQ02m] exeMicros[2982] rows[1] bind[1] 
+txn[1004], 20:57:09.261, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 20:57:09.261, FindBean type[MyModel] origin[Z0oq-.C5XUBI.BvQ02m] exeMicros[157] rows[1] bind[1] 
+txn[1003], 20:57:51.411, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1003], 20:57:51.414, FindBean type[MyModel] origin[9kCjD.C5XUBI.BvQ02m] exeMicros[3202] rows[1] bind[1] 
+txn[1004], 20:57:51.431, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 20:57:51.431, FindBean type[MyModel] origin[Z0oq-.C5XUBI.BvQ02m] exeMicros[167] rows[1] bind[1] 
+txn[1003], 20:58:36.095, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1003], 20:58:36.098, FindBean type[MyModel] origin[9kCjD.C5XUBI.BvQ02m] exeMicros[3334] rows[1] bind[1] 
+txn[1004], 20:58:36.115, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 20:58:36.115, FindBean type[MyModel] origin[Z0oq-.C5XUBI.BvQ02m] exeMicros[148] rows[1] bind[1] 
+txn[1003], 21:00:56.498, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1003], 21:00:56.501, FindBean type[MyModel] origin[9kCjE.C5XUBI.BvQ02m] exeMicros[3274] rows[1] bind[1] 
+txn[1004], 21:00:56.518, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 21:00:56.518, FindBean type[MyModel] origin[Z0oq_.C5XUBI.BvQ02m] exeMicros[151] rows[1] bind[1] 
+txn[1003], 21:01:19.551, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1003], 21:01:19.554, FindBean type[MyModel] origin[9kCjE.C5XUBI.BvQ02m] exeMicros[3049] rows[1] bind[1] 
+txn[1004], 21:01:19.561, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 21:01:19.561, FindBean type[MyModel] origin[9kCjJ.C5XUBI.BvQ02m] exeMicros[144] rows[0] bind[1] 
+txn[1005], 21:01:19.573, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1005], 21:01:19.573, FindBean type[MyModel] origin[Z0oq_.C5XUBI.BvQ02m] exeMicros[126] rows[1] bind[1] 
+txn[1003], 21:01:30.107, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1003], 21:01:30.111, FindBean type[MyModel] origin[9kCjE.C5XUBI.BvQ02m] exeMicros[3236] rows[1] bind[1] 
+txn[1004], 21:01:30.117, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 21:01:30.118, FindBean type[MyModel] origin[9kCjJ.C5XUBI.BvQ02m] exeMicros[178] rows[0] bind[1] 
+txn[1005], 21:01:30.130, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1005], 21:01:30.130, FindBean type[MyModel] origin[Z0oq_.C5XUBI.BvQ02m] exeMicros[137] rows[1] bind[1] 
+txn[1003], 21:01:58.670, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1003], 21:01:58.673, FindBean type[MyModel] origin[9kCjE.C5XUBI.BvQ02m] exeMicros[3344] rows[1] bind[1] 
+txn[1004], 21:01:58.681, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 21:01:58.681, FindBean type[MyModel] origin[9kCjJ.C5XUBI.BvQ02m] exeMicros[254] rows[0] bind[1] 
+txn[1006], 21:01:58.696, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1006], 21:01:58.697, FindBean type[MyModel] origin[Z0oq_.C5XUBI.BvQ02m] exeMicros[187] rows[1] bind[1] 
+txn[1003], 21:02:25.831, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1003], 21:02:25.834, FindBean type[MyModel] origin[9kCi-.C5XUBI.BvQ02m] exeMicros[3245] rows[1] bind[1] 
+txn[1004], 21:02:25.841, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 21:02:25.841, FindBean type[MyModel] origin[9kCjE.C5XUBI.BvQ02m] exeMicros[162] rows[0] bind[1] 
+txn[1006], 21:02:25.851, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1006], 21:02:25.852, FindBean type[MyModel] origin[Z0oq5.C5XUBI.BvQ02m] exeMicros[149] rows[1] bind[1] 
+txn[1003], 21:03:20.042, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1003], 21:03:20.045, FindBean type[MyModel] origin[9kCi-.C5XUBI.BvQ02m] exeMicros[3245] rows[1] bind[1] 
+txn[1004], 21:03:20.052, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 21:03:20.052, FindBean type[MyModel] origin[9kCjE.C5XUBI.BvQ02m] exeMicros[139] rows[0] bind[1] 
+txn[1006], 21:03:20.062, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1006], 21:03:20.062, FindBean type[MyModel] origin[Z0oq5.C5XUBI.BvQ02m] exeMicros[150] rows[1] bind[1] 
+txn[1003], 21:03:27.352, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1003], 21:03:27.355, FindBean type[MyModel] origin[9kCi-.C5XUBI.BvQ02m] exeMicros[3021] rows[1] bind[1] 
+txn[1004], 21:03:27.362, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1004], 21:03:27.362, FindBean type[MyModel] origin[9kCjE.C5XUBI.BvQ02m] exeMicros[151] rows[0] bind[1] 
+txn[1006], 21:03:27.372, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1006], 21:03:27.373, FindBean type[MyModel] origin[Z0oq5.C5XUBI.BvQ02m] exeMicros[129] rows[1] bind[1] 
+txn[1008], 21:03:27.382, select t0.id c0, t0.name c1  from my_model t0 where t0.id = ?   
+txn[1008], 21:03:27.382, FindBean type[MyModel] origin[BpYE2_.C5XUBI.BvQ02m] exeMicros[221] rows[1] bind[1] 
