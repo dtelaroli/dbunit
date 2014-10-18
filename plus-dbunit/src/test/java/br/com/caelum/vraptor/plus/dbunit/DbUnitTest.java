@@ -7,10 +7,7 @@ import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.caelum.vraptor.plus.dbunit.DbUnit;
-
 import com.avaje.ebean.Ebean;
-import com.avaje.ebean.Transaction;
 
 public class DbUnitTest {
 
