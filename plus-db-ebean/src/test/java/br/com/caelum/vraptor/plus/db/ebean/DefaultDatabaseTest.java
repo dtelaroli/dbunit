@@ -1,6 +1,6 @@
 package br.com.caelum.vraptor.plus.db.ebean;
 
-import static br.com.caelum.vraptor.plus.api.Databases.listAll;
+import static br.com.caelum.vraptor.plus.api.Databases.find;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
@@ -23,14 +23,14 @@ public class DefaultDatabaseTest {
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
 		
-		when(container.instanceFor(listAll())).thenReturn(new DefaultFindDb());
+		when(container.instanceFor(find())).thenReturn(new DefaultFindDb());
 		
 		dbs = new DefaultDataBase(container);
 	}
 
 	@Test
 	public <T> void shouldReturnListAllActionInstance() {
-		assertThat(dbs.use(listAll()), instanceOf(FindDb.class));
+		assertThat(dbs.use(find()), instanceOf(FindDb.class));
 	}
 
 }
