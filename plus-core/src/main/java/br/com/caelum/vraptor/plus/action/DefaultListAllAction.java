@@ -1,6 +1,6 @@
 package br.com.caelum.vraptor.plus.action;
 
-import static br.com.caelum.vraptor.plus.api.Databases.listAll;
+import static br.com.caelum.vraptor.plus.api.Databases.find;
 
 import java.util.List;
 
@@ -29,7 +29,7 @@ public class DefaultListAllAction implements ListAllAction {
 	
 	@Override
 	public <T> List<T> all(Class<T> type) {
-		return db.use(listAll()).all(type);
+		return db.use(find()).findAll(type);
 	}
 
 }

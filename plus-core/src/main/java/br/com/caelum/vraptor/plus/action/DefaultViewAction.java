@@ -1,6 +1,6 @@
 package br.com.caelum.vraptor.plus.action;
 
-import static br.com.caelum.vraptor.plus.api.Databases.load;
+import static br.com.caelum.vraptor.plus.api.Databases.find;
 
 import javax.inject.Inject;
 
@@ -25,7 +25,7 @@ public class DefaultViewAction implements ViewAction {
 
 	@Override
 	public <T> T get(Class<T> type, long id) {
-		return db.use(load()).get(type, id);
+		return db.use(find()).find(type, id);
 	}
 
 }

@@ -1,8 +1,7 @@
 package br.com.caelum.vraptor.plus.action;
 
-import static br.com.caelum.vraptor.plus.api.Databases.load;
-import static org.hamcrest.Matchers.instanceOf;
-import static org.junit.Assert.assertThat;
+import static br.com.caelum.vraptor.plus.api.Databases.remove;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 
 import org.junit.Before;
@@ -12,28 +11,34 @@ import org.mockito.MockitoAnnotations;
 
 import br.com.caelum.vraptor.plus.MyModel;
 import br.com.caelum.vraptor.plus.api.Database;
-import br.com.caelum.vraptor.plus.api.action.ViewAction;
-import br.com.caelum.vraptor.plus.api.db.LoadDb;
+import br.com.caelum.vraptor.plus.api.action.RemoveAction;
+import br.com.caelum.vraptor.plus.api.db.RemoveDb;
 
 public class DefaultRemoveActionTest {
 
-	private ViewAction act;
+	private RemoveAction act;
 	@Mock private Database db;
-	@Mock private LoadDb getDb;
+	@Mock private RemoveDb removeDb;
 	
 	@Before
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
 		
-		when(getDb.get(MyModel.class, 1L)).thenReturn(new MyModel());
-		when(db.use(load())).thenReturn(getDb);
+		doThrow(Exception.class).when(removeDb).by(null, 0l);
 		
-		act = new DefaultViewAction(db);
+		when(db.use(remove())).thenReturn(removeDb);
+		
+		act = new DefaultRemoveAction(db);
 	}
 
 	@Test
 	public void shouldReturnListOfMyModel() {
-		assertThat(act.get(MyModel.class, 1L), instanceOf(MyModel.class));
+		act.by(MyModel.class, 1l);
+	}
+	
+	@Test(expected = Exception.class)
+	public void shouldReturnExceptionIfInvalid() {
+		act.by(null, 0l);
 	}
 
 }

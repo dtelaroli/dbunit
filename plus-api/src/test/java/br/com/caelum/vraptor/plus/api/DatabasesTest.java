@@ -10,7 +10,7 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import br.com.caelum.vraptor.plus.api.db.ListAllDb;
+import br.com.caelum.vraptor.plus.api.db.FindDb;
 import br.com.caelum.vraptor.plus.api.db.LoadDb;
 import br.com.caelum.vraptor.plus.api.db.PaginateDb;
 import br.com.caelum.vraptor.plus.api.db.RemoveDb;
@@ -20,7 +20,7 @@ public class DatabasesTest {
 
 	@Test
 	public void shouldReturnListAllDb() {
-		assertThat(listAll(), typeCompatibleWith(ListAllDb.class));
+		assertThat(listAll(), typeCompatibleWith(FindDb.class));
 	}
 	
 	@Test

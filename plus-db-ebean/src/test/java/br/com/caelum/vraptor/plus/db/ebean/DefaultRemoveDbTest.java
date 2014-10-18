@@ -25,7 +25,7 @@ public class DefaultRemoveDbTest {
 	}
 	
 	@Test
-	public void shouldReturnListOfMyModel() {
+	public void shouldRemoveMyModel() {
 		int by = db.by(MyModel.class, 1L);
 		assertThat(by, equalTo(1));
 		assertThat(Ebean.find(MyModel.class, 1L), nullValue());
