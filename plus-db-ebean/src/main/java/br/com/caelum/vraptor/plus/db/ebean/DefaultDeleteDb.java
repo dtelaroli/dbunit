@@ -10,7 +10,7 @@ public class DefaultDeleteDb implements DeleteDb {
 	}
 	
 	@Override
-	public <T> int by(Class<T> type, long id) {
+	public <T> Integer by(Class<T> type, long id) {
 		return Ebean.delete(type, id);
 	}
 

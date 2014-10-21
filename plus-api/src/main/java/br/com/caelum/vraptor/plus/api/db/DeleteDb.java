@@ -4,6 +4,6 @@ import br.com.caelum.vraptor.plus.api.Db;
 
 public interface DeleteDb extends Db {
 
-	<T> int by(Class<T> type, long id);
+	<T> Integer by(Class<T> type, long id);
 	
 }

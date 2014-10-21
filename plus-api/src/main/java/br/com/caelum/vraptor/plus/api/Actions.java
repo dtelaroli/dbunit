@@ -1,11 +1,14 @@
 package br.com.caelum.vraptor.plus.api;
 
+import javax.enterprise.inject.Vetoed;
+
 import br.com.caelum.vraptor.plus.api.action.ListAllAction;
 import br.com.caelum.vraptor.plus.api.action.PaginationAction;
 import br.com.caelum.vraptor.plus.api.action.DeleteAction;
 import br.com.caelum.vraptor.plus.api.action.PersistAction;
 import br.com.caelum.vraptor.plus.api.action.LoadAction;
 
+@Vetoed
 public class Actions {
 
 	public static Class<ListAllAction> list() {
