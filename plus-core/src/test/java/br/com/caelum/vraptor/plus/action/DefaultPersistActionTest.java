@@ -12,14 +12,14 @@ import org.mockito.MockitoAnnotations;
 
 import br.com.caelum.vraptor.plus.MyModel;
 import br.com.caelum.vraptor.plus.api.Database;
-import br.com.caelum.vraptor.plus.api.action.SaveAction;
-import br.com.caelum.vraptor.plus.api.db.SaveDb;
+import br.com.caelum.vraptor.plus.api.action.PersistAction;
+import br.com.caelum.vraptor.plus.api.db.PersistDb;
 
-public class DefaultSaveActionTest {
+public class DefaultPersistActionTest {
 
-	private SaveAction act;
+	private PersistAction act;
 	@Mock private Database db;
-	@Mock private SaveDb saveDb;
+	@Mock private PersistDb saveDb;
 	private MyModel model;
 	
 	@Before
@@ -32,7 +32,7 @@ public class DefaultSaveActionTest {
 		when(saveDb.save(model)).thenReturn(savedModel);
 		when(db.use(persist())).thenReturn(saveDb);
 		
-		act = new DefaultSaveAction(db);
+		act = new DefaultPersistAction(db);
 	}
 
 	@Test

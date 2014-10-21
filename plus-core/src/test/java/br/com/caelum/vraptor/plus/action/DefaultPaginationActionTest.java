@@ -19,13 +19,13 @@ import org.mockito.MockitoAnnotations;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.plus.MyModel;
 import br.com.caelum.vraptor.plus.api.Database;
-import br.com.caelum.vraptor.plus.api.action.PaginateAction;
+import br.com.caelum.vraptor.plus.api.action.PaginationAction;
 import br.com.caelum.vraptor.plus.api.db.FindDb;
 import br.com.caelum.vraptor.util.test.MockResult;
 
-public class DefaultPaginateActionTest {
+public class DefaultPaginationActionTest {
 
-	private PaginateAction act;
+	private PaginationAction act;
 	@Mock private Database db;
 	@Mock private FindDb findDb;
 	private Result result;
@@ -36,23 +36,23 @@ public class DefaultPaginateActionTest {
 		
 		result = new MockResult();
 		
-		when(findDb.findPaginate(MyModel.class, 10, 10)).thenReturn(Arrays.asList(new MyModel()));
+		when(findDb.paginate(MyModel.class, 10, 10)).thenReturn(Arrays.asList(new MyModel()));
 		when(db.use(find())).thenReturn(findDb);
 		
-		act = new DefaultPaginateAllAction(db, result);
+		act = new DefaultPaginationAction(db, result);
 	}
 
 	@Test
 	public void shouldReturnListOfMyModel() {
-		List<MyModel> all = act.first(10).limit(10).all(MyModel.class);
+		List<MyModel> all = act.page(10).limit(10).all(MyModel.class);
 		assertThat(all, not(empty()));
 		assertThat(all.get(0), instanceOf(MyModel.class));
 	}
 	
 	@Test
 	public void shouldIncludeParameters() {
-		act.first(10).limit(5);
-		assertThat(result.included().get("first"), equalTo(10));
+		act.page(10).limit(5);
+		assertThat(result.included().get("page"), equalTo(10));
 		assertThat(result.included().get("limit"), equalTo(5));
 	}
 

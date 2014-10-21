@@ -1,6 +1,6 @@
 package br.com.caelum.vraptor.plus.action;
 
-import static br.com.caelum.vraptor.plus.api.Databases.remove;
+import static br.com.caelum.vraptor.plus.api.Databases.delete;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 
@@ -11,14 +11,14 @@ import org.mockito.MockitoAnnotations;
 
 import br.com.caelum.vraptor.plus.MyModel;
 import br.com.caelum.vraptor.plus.api.Database;
-import br.com.caelum.vraptor.plus.api.action.RemoveAction;
-import br.com.caelum.vraptor.plus.api.db.RemoveDb;
+import br.com.caelum.vraptor.plus.api.action.DeleteAction;
+import br.com.caelum.vraptor.plus.api.db.DeleteDb;
 
-public class DefaultRemoveActionTest {
+public class DefaultDeleteActionTest {
 
-	private RemoveAction act;
+	private DeleteAction act;
 	@Mock private Database db;
-	@Mock private RemoveDb removeDb;
+	@Mock private DeleteDb removeDb;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -26,9 +26,9 @@ public class DefaultRemoveActionTest {
 		
 		doThrow(Exception.class).when(removeDb).by(null, 0l);
 		
-		when(db.use(remove())).thenReturn(removeDb);
+		when(db.use(delete())).thenReturn(removeDb);
 		
-		act = new DefaultRemoveAction(db);
+		act = new DefaultDeleteAction(db);
 	}
 
 	@Test

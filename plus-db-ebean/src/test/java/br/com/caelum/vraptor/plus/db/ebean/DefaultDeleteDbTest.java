@@ -7,21 +7,21 @@ import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.caelum.vraptor.plus.api.db.RemoveDb;
+import br.com.caelum.vraptor.plus.api.db.DeleteDb;
 import br.com.caelum.vraptor.plus.dbunit.DbUnit;
 import br.com.caelum.vraptor.plus.dbunit.DbUnitEbean;
 
 import com.avaje.ebean.Ebean;
 
-public class DefaultRemoveDbTest {
+public class DefaultDeleteDbTest {
 
-	private RemoveDb db;
+	private DeleteDb db;
 	
 	@Before
 	public void setUp() throws Exception {
 		DbUnit dbUnit = new DbUnitEbean();
 		dbUnit.init(MyModel.class);
-		db = new DefaultRemoveDb();
+		db = new DefaultDeleteDb();
 	}
 	
 	@Test

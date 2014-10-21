@@ -13,7 +13,7 @@ import br.com.caelum.vraptor.plus.api.db.FindDb;
 import br.com.caelum.vraptor.plus.dbunit.DbUnit;
 import br.com.caelum.vraptor.plus.dbunit.DbUnitEbean;
 
-public class DefaultListAllDbTest {
+public class DefaultFindDbTest {
 
 	private FindDb db;
 	
@@ -26,23 +26,31 @@ public class DefaultListAllDbTest {
 	
 	@Test
 	public void shouldReturnListOfMyModel() {
-		List<MyModel> all = db.findAll(MyModel.class);
+		List<MyModel> all = db.all(MyModel.class);
 		assertThat(all, notNullValue());
 		assertThat(all.get(0).getId(), equalTo(1L));
 	}
 	
 	@Test
 	public void shouldReturnMyModel() {
-		MyModel model = db.find(MyModel.class, 1L);
+		MyModel model = db.by(MyModel.class, 1L);
 		assertThat(model.getId(), equalTo(1L));
 	}
 	
 	@Test
-	public void shouldReturnListPaginateOfMyModel() {
-		List<MyModel> all = db.findPaginate(MyModel.class, 0, 2);
+	public void shouldReturnListPaginateOfMyModelPage1() {
+		List<MyModel> all = db.paginate(MyModel.class, 1, 2);
 		assertThat(all, notNullValue());
 		assertThat(all.get(1).getId(), equalTo(2L));
 		assertThat(all.size(), equalTo(2));
+	}
+	
+	@Test
+	public void shouldReturnListPaginateOfMyModelPage2() {
+		List<MyModel> all = db.paginate(MyModel.class, 2, 2);
+		assertThat(all, notNullValue());
+		assertThat(all.get(0).getId(), equalTo(3L));
+		assertThat(all.size(), equalTo(1));
 	}
 
 }

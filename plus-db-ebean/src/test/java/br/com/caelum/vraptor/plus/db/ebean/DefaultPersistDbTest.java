@@ -6,15 +6,15 @@ import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.caelum.vraptor.plus.api.db.SaveDb;
+import br.com.caelum.vraptor.plus.api.db.PersistDb;
 
-public class DefaultSaveDbTest {
+public class DefaultPersistDbTest {
 
-	private SaveDb db;
+	private PersistDb db;
 	
 	@Before
 	public void setUp() throws Exception {
-		db = new DefaultSaveDb();
+		db = new DefaultPersistDb();
 	}
 	
 	@Test

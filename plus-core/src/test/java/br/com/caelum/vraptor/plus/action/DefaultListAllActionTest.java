@@ -27,7 +27,7 @@ public class DefaultListAllActionTest {
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
 		
-		when(listDb.findAll(MyModel.class)).thenReturn(Arrays.asList(new MyModel()));
+		when(listDb.all(MyModel.class)).thenReturn(Arrays.asList(new MyModel()));
 		when(db.use(find())).thenReturn(listDb);
 		
 		act = new DefaultListAllAction(db);

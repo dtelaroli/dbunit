@@ -29,7 +29,7 @@ public class DefaultListAllAction implements ListAllAction {
 	
 	@Override
 	public <T> List<T> all(Class<T> type) {
-		return db.use(find()).findAll(type);
+		return db.use(find()).all(type);
 	}
 
 }

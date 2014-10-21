@@ -1,10 +1,10 @@
 package br.com.caelum.vraptor.plus.db.ebean;
 
-import br.com.caelum.vraptor.plus.api.db.SaveDb;
+import br.com.caelum.vraptor.plus.api.db.PersistDb;
 
 import com.avaje.ebean.Ebean;
 
-public class DefaultSaveDb implements SaveDb {
+public class DefaultPersistDb implements PersistDb {
 
 	@Override
 	public <T> T save(T object) {

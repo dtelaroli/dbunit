@@ -1,31 +1,31 @@
 package br.com.caelum.vraptor.plus.api;
 
 import br.com.caelum.vraptor.plus.api.action.ListAllAction;
-import br.com.caelum.vraptor.plus.api.action.PaginateAction;
-import br.com.caelum.vraptor.plus.api.action.RemoveAction;
-import br.com.caelum.vraptor.plus.api.action.SaveAction;
-import br.com.caelum.vraptor.plus.api.action.ViewAction;
+import br.com.caelum.vraptor.plus.api.action.PaginationAction;
+import br.com.caelum.vraptor.plus.api.action.DeleteAction;
+import br.com.caelum.vraptor.plus.api.action.PersistAction;
+import br.com.caelum.vraptor.plus.api.action.LoadAction;
 
 public class Actions {
 
-	public static Class<ListAllAction> listAll() {
+	public static Class<ListAllAction> list() {
 		return ListAllAction.class;
 	}
 
-	public static Class<ViewAction> view() {
-		return ViewAction.class;
+	public static Class<LoadAction> load() {
+		return LoadAction.class;
 	}
 	
-	public static Class<SaveAction> save() {
-		return SaveAction.class;
+	public static Class<PersistAction> persist() {
+		return PersistAction.class;
 	}
 
-	public static Class<PaginateAction> pagination() {
-		return PaginateAction.class;
+	public static Class<PaginationAction> pagination() {
+		return PaginationAction.class;
 	}
 
-	public static Class<RemoveAction> delete() {
-		return RemoveAction.class;
+	public static Class<DeleteAction> delete() {
+		return DeleteAction.class;
 	}
 
 }

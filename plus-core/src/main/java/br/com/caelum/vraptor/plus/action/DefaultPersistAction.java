@@ -5,21 +5,21 @@ import static br.com.caelum.vraptor.plus.api.Databases.persist;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.plus.api.Database;
-import br.com.caelum.vraptor.plus.api.action.SaveAction;
+import br.com.caelum.vraptor.plus.api.action.PersistAction;
 
-public class DefaultSaveAction implements SaveAction {
+public class DefaultPersistAction implements PersistAction {
 
 	private Database db;
 
 	/**
 	 * @deprecated CDI eyes-only
 	 */
-	protected DefaultSaveAction() {
+	protected DefaultPersistAction() {
 		this(null);
 	}
 
 	@Inject
-	public DefaultSaveAction(Database db) {
+	public DefaultPersistAction(Database db) {
 		this.db = db;
 	}
 

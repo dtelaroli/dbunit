@@ -2,11 +2,11 @@ package br.com.caelum.vraptor.plus.db.ebean;
 
 import com.avaje.ebean.Ebean;
 
-import br.com.caelum.vraptor.plus.api.db.RemoveDb;
+import br.com.caelum.vraptor.plus.api.db.DeleteDb;
 
-public class DefaultRemoveDb implements RemoveDb {
+public class DefaultDeleteDb implements DeleteDb {
 
-	public DefaultRemoveDb() {
+	public DefaultDeleteDb() {
 	}
 	
 	@Override

@@ -12,20 +12,24 @@ public class DefaultFindDb implements FindDb {
 	}
 	
 	@Override
-	public <T> List<T> findAll(Class<T> type) {
+	public <T> List<T> all(Class<T> type) {
 		return Ebean.find(type).findList();
 	}
 	
 	@Override
-	public <T> List<T> findPaginate(Class<T> type, int first, int limit) {
+	public <T> List<T> paginate(Class<T> type, int page, int limit) {
 		return Ebean.find(type)
-				.setFirstRow(first)
+				.setFirstRow(getFirst(page, limit))
 				.setMaxRows(limit)
 				.findList();
 	}
+
+	private int getFirst(int page, int limit) {
+		return (page - 1) * limit;
+	}
 	
 	@Override
-	public <T> T find(Class<T> type, long id) {
+	public <T> T by(Class<T> type, long id) {
 		return Ebean.find(type, id);
 	}
 

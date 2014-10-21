@@ -4,12 +4,12 @@ import java.util.List;
 
 import br.com.caelum.vraptor.plus.api.Act;
 
-public interface PaginateAction extends Act {
+public interface PaginationAction extends Act {
 
 	<T> List<T> all(Class<T> type);
 
-	PaginateAction first(int first);
+	PaginationAction page(int first);
 
-	PaginateAction limit(int limit);
+	PaginationAction limit(int limit);
 	
 }
