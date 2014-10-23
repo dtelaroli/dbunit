@@ -4,8 +4,10 @@ import br.com.caelum.vraptor.plus.api.Act;
 
 public interface PersistAction extends Act {
 
-	<T> T save(T object) throws Exception;
+	<T> PersistAction save(T object);
 
-	<T, I> T andRedirect(Class<T> controller, I object);
+	<T> T andRedirect(Class<T> controller);
+	
+	<T> T andReturn();
 
 }

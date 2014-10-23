@@ -7,5 +7,5 @@ public interface Act {
 	Result result();
 
 	Database db();
-
+	
 }

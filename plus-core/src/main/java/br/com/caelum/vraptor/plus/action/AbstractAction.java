@@ -23,4 +23,17 @@ public abstract class AbstractAction implements Act {
 	public Result result() {
 		return result;
 	}
+
+	@SuppressWarnings("unchecked")
+	public <T> T andReturn() {
+		return (T) dbObject();
+	}
+
+	protected Object dbObject() {
+		throw new UnsupportedOperationException("Not implemented");
+	}
+
+	public <T> T andRedirect(Class<T> controller) {
+		return result().redirectTo(controller);
+	}
 }

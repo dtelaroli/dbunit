@@ -1,9 +1,10 @@
 package br.com.caelum.vraptor.plus.action;
 
 import static br.com.caelum.vraptor.plus.api.Databases.delete;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.instanceOf;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import org.junit.Before;
@@ -32,13 +33,22 @@ public class DefaultDeleteActionTest {
 		doThrow(Exception.class).when(removeDb).by(null, 0l);
 		
 		when(db.use(delete())).thenReturn(removeDb);
+		when(result.redirectTo(MyController.class)).thenReturn(new MyController());
+		when(removeDb.by(MyModel.class, 1l)).thenReturn(1);
 		
 		act = new DefaultDeleteAction(result, db);
 	}
 
 	@Test
 	public void shouldReturnListOfMyModel() {
-		act.by(MyModel.class, 1l);
+		int i = act.by(MyModel.class, 1l).andReturn();
+		assertThat(i, equalTo(1));
+	}
+	
+	@Test
+	public void shouldReturnControllerInstance() {
+		MyController controller = act.by(MyModel.class, 1l).andRedirect(MyController.class);
+		assertThat(controller, instanceOf(MyController.class));
 	}
 	
 	@Test(expected = Exception.class)
@@ -46,14 +56,4 @@ public class DefaultDeleteActionTest {
 		act.by(null, 0l);
 	}
 	
-	@Test
-	public void shouldReturnResultForRedirect() throws Exception {
-		MyController controller = spy(new MyController());
-		when(act.andRedirect(MyController.class, 1l)).thenReturn(controller);
-		
-		act.andRedirect(MyController.class, 1l).index();
-		verify(result).redirectTo(MyController.class);
-		verify(controller).index();
-	}
-
 }

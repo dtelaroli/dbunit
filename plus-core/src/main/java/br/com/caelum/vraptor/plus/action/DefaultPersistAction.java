@@ -10,6 +10,8 @@ import br.com.caelum.vraptor.plus.api.action.PersistAction;
 
 public class DefaultPersistAction extends AbstractAction implements PersistAction {
 
+	private Object objectDb;
+
 	/**
 	 * @deprecated CDI eyes-only
 	 */
@@ -23,18 +25,18 @@ public class DefaultPersistAction extends AbstractAction implements PersistActio
 	}
 
 	@Override
-	public <T> T save(T object) throws Exception {
-		return execute(object);
+	public <T> PersistAction save(T object) {
+		execute(object);
+		return this;
 	}
 
-	private <T> T execute(T object) {
-		return db().use(persist()).save(object);
+	private <T> void execute(T object) {
+		objectDb = db().use(persist()).save(object);
+	}
+
+	@Override
+	protected Object dbObject() {
+		return objectDb;
 	}
 	
-	@Override
-	public <T, I> T andRedirect(Class<T> controller, I object) {
-		execute(object);
-		return result().redirectTo(controller);
-	}
-
 }

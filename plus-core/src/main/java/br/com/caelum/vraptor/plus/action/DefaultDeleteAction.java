@@ -10,6 +10,8 @@ import br.com.caelum.vraptor.plus.api.action.DeleteAction;
 
 public class DefaultDeleteAction extends AbstractAction implements DeleteAction {
 
+	private Integer dbObject;
+
 	/**
 	 * @deprecated CDI eyes-only
 	 */
@@ -23,18 +25,18 @@ public class DefaultDeleteAction extends AbstractAction implements DeleteAction 
 	}
 
 	@Override
-	public <T> void by(Class<T> type, Object id) {
+	public <T> DeleteAction by(Class<T> type, Object id) {
 		execute(type, id);
+		return this;
 	}
 
 	private <T> void execute(Class<T> type, Object id) {
-		db().use(delete()).by(type, id);
+		dbObject = db().use(delete()).by(type, id);
 	}
 
 	@Override
-	public <T> T andRedirect(Class<T> controller, Object id) {
-		execute(controller, id);
-		return result().redirectTo(controller);
+	protected Object dbObject() {
+		return dbObject;
 	}
 
 }
