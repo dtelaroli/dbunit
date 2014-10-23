@@ -7,29 +7,28 @@ import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
+import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.plus.api.Database;
 import br.com.caelum.vraptor.plus.api.action.ListAllAction;
 
 @RequestScoped
-public class DefaultListAllAction implements ListAllAction {
-
-	private final Database db;
+public class DefaultListAllAction extends AbstractAction implements ListAllAction {
 
 	/**
 	 * @deprecated CDI eyes-only
 	 */
 	protected DefaultListAllAction() {
-		this(null);
+		this(null, null);
 	}
 
 	@Inject
-	public DefaultListAllAction(Database db) {
-		this.db = db;
+	public DefaultListAllAction(Result result, Database db) {
+		super(result, db);
 	}
 	
 	@Override
 	public <T> List<T> all(Class<T> type) {
-		return db.use(find()).all(type);
+		return db().use(find()).all(type);
 	}
-
+	
 }

@@ -2,9 +2,9 @@ package br.com.caelum.vraptor.plus.db.ebean;
 
 import java.util.List;
 
-import com.avaje.ebean.Ebean;
-
 import br.com.caelum.vraptor.plus.api.db.FindDb;
+
+import com.avaje.ebean.Ebean;
 
 public class DefaultFindDb implements FindDb {
 
@@ -29,7 +29,7 @@ public class DefaultFindDb implements FindDb {
 	}
 	
 	@Override
-	public <T> T by(Class<T> type, long id) {
+	public <T> T by(Class<T> type, Object id) {
 		return Ebean.find(type, id);
 	}
 

@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.com.caelum.vraptor.plus.api.db.FindDb;
+import br.com.caelum.vraptor.plus.api.test.MyModel;
 import br.com.caelum.vraptor.plus.dbunit.DbUnit;
 import br.com.caelum.vraptor.plus.dbunit.DbUnitEbean;
 

@@ -10,6 +10,6 @@ public interface FindDb extends Db {
 
 	<T> List<T> paginate(Class<T> type, int page, int limit);
 
-	<T> T by(Class<T> type, long id);
+	<T> T by(Class<T> type, Object id);
 
 }

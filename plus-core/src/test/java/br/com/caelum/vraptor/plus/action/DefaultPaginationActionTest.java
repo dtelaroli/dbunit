@@ -15,12 +15,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.Spy;
 
 import br.com.caelum.vraptor.Result;
-import br.com.caelum.vraptor.plus.MyModel;
 import br.com.caelum.vraptor.plus.api.Database;
 import br.com.caelum.vraptor.plus.api.action.PaginationAction;
 import br.com.caelum.vraptor.plus.api.db.FindDb;
+import br.com.caelum.vraptor.plus.api.test.MyModel;
 import br.com.caelum.vraptor.util.test.MockResult;
 
 public class DefaultPaginationActionTest {
@@ -28,18 +29,16 @@ public class DefaultPaginationActionTest {
 	private PaginationAction act;
 	@Mock private Database db;
 	@Mock private FindDb findDb;
-	private Result result;
+	@Spy private Result result = new MockResult();
 	
 	@Before
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
 		
-		result = new MockResult();
-		
 		when(findDb.paginate(MyModel.class, 10, 10)).thenReturn(Arrays.asList(new MyModel()));
 		when(db.use(find())).thenReturn(findDb);
 		
-		act = new DefaultPaginationAction(db, result);
+		act = new DefaultPaginationAction(result, db);
 	}
 
 	@Test

@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.com.caelum.vraptor.plus.api.db.PersistDb;
+import br.com.caelum.vraptor.plus.api.test.MyModel;
 
 public class DefaultPersistDbTest {
 

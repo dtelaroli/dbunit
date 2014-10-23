@@ -10,16 +10,18 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import br.com.caelum.vraptor.plus.MyModel;
+import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.plus.api.Database;
 import br.com.caelum.vraptor.plus.api.action.LoadAction;
 import br.com.caelum.vraptor.plus.api.db.FindDb;
+import br.com.caelum.vraptor.plus.api.test.MyModel;
 
 public class DefaultLoadActionTest {
 
 	private LoadAction act;
 	@Mock private Database db;
 	@Mock private FindDb findDb;
+	@Mock private Result result;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -28,7 +30,7 @@ public class DefaultLoadActionTest {
 		when(findDb.by(MyModel.class, 1L)).thenReturn(new MyModel());
 		when(db.use(find())).thenReturn(findDb);
 		
-		act = new DefaultLoadAction(db);
+		act = new DefaultLoadAction(result, db);
 	}
 
 	@Test

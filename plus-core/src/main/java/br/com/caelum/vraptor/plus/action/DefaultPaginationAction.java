@@ -10,10 +10,8 @@ import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.plus.api.Database;
 import br.com.caelum.vraptor.plus.api.action.PaginationAction;
 
-public class DefaultPaginationAction implements PaginationAction {
+public class DefaultPaginationAction extends AbstractAction implements PaginationAction {
 
-	private final Database db;
-	private final Result result;
 	private int page = 0;
 	private int limit = 20;
 
@@ -25,26 +23,25 @@ public class DefaultPaginationAction implements PaginationAction {
 	}
 	
 	@Inject
-	public DefaultPaginationAction(Database db, Result result) {
-		this.db = db;
-		this.result = result;
+	public DefaultPaginationAction(Result result, Database db) {
+		super(result, db);
 	}
 
 	@Override
 	public <T> List<T> all(Class<T> type) {
-		return db.use(find()).paginate(type, page, limit);
+		return db().use(find()).paginate(type, page, limit);
 	}
 
 	@Override
 	public PaginationAction page(int page) {
-		result.include("page", page);
+		result().include("page", page);
 		this.page = page;
 		return this;
 	}
 
 	@Override
 	public PaginationAction limit(int limit) {
-		result.include("limit", limit);
+		result().include("limit", limit);
 		this.limit = limit;
 		return this;
 	}

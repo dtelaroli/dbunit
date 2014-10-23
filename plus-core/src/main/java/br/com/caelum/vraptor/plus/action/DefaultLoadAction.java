@@ -4,28 +4,27 @@ import static br.com.caelum.vraptor.plus.api.Databases.find;
 
 import javax.inject.Inject;
 
+import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.plus.api.Database;
 import br.com.caelum.vraptor.plus.api.action.LoadAction;
 
-public class DefaultLoadAction implements LoadAction {
-
-	private final Database db;
+public class DefaultLoadAction extends AbstractAction implements LoadAction {
 
 	/**
 	 * @deprecated CDI eyes-only
 	 */
 	protected DefaultLoadAction() {
-		this(null);
+		this(null, null);
 	}
 	
 	@Inject
-	public DefaultLoadAction(Database db) {
-		this.db = db;
+	public DefaultLoadAction(Result result, Database db) {
+		super(result, db);
 	}
 
 	@Override
 	public <T> T by(Class<T> type, long id) {
-		return db.use(find()).by(type, id);
+		return db().use(find()).by(type, id);
 	}
 
 }

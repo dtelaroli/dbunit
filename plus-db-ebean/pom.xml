@@ -47,7 +47,7 @@
 				<artifactId>avaje-ebeanorm-mavenenhancer</artifactId>
 				<version>${ebean.version}</version>
 				<configuration>
-					<packages>br.com.caelum.vraptor.plus.db.ebean.**</packages>
+					<packages>br.com.caelum.vraptor.plus.api.test.*</packages>
 					<transformArgs>debug=1</transformArgs>
 				</configuration>
 				<executions>
