@@ -4,6 +4,6 @@ import br.com.caelum.vraptor.plus.api.Act;
 
 public interface LoadAction extends Act {
 
-	<T> T by(Class<T> type, long id);
+	<T> T by(Class<T> type, Object id);
 	
 }

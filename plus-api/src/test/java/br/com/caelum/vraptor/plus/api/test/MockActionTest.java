@@ -38,7 +38,7 @@ public class MockActionTest {
 	
 	@Test
 	public void shouldNotThrowNullPointersOnFindDbPaginate() {
-		mock.use(pagination()).page(1).limit(10).all(Model.class);
+		mock.use(pagination()).page(1).limit(10).paginate(Model.class);
 	}
 
 }

@@ -2,13 +2,12 @@ package br.com.caelum.vraptor.plus.action;
 
 import static br.com.caelum.vraptor.plus.api.Databases.find;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.plus.api.Database;
 import br.com.caelum.vraptor.plus.api.action.PaginationAction;
+import br.com.caelum.vraptor.plus.api.db.pagination.Page;
 
 public class DefaultPaginationAction extends AbstractAction implements PaginationAction {
 
@@ -28,20 +27,18 @@ public class DefaultPaginationAction extends AbstractAction implements Paginatio
 	}
 
 	@Override
-	public <T> List<T> all(Class<T> type) {
+	public <T> Page<T> paginate(Class<T> type) {
 		return db().use(find()).paginate(type, page, limit);
 	}
 
 	@Override
 	public PaginationAction page(int page) {
-		result().include("page", page);
 		this.page = page;
 		return this;
 	}
 
 	@Override
 	public PaginationAction limit(int limit) {
-		result().include("limit", limit);
 		this.limit = limit;
 		return this;
 	}

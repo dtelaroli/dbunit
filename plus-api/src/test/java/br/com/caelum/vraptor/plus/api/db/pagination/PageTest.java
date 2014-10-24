@@ -1,4 +1,4 @@
-package br.com.caelum.vraptor.plus.action;
+package br.com.caelum.vraptor.plus.api.db.pagination;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
@@ -9,20 +9,23 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.caelum.vraptor.plus.api.db.pagination.Page;
+import br.com.caelum.vraptor.plus.api.test.MyModel;
+
 public class PageTest {
 
-	private Page page;
-	private List<Object> emptyList;
+	private Page<MyModel> page;
+	private List<MyModel> emptyList;
 
 	@Before
 	public void setUp() throws Exception {
 		emptyList = Collections.emptyList();
-		page = new Page(1, 10, 100, emptyList);
+		page = new Page<MyModel>(1, 10, 100, emptyList);
 	}
 
 	@Test
 	public void shouldSetPage() {
-		assertThat(page.getPageNumber(), equalTo(1));
+		assertThat(page.getNumber(), equalTo(1));
 	}
 
 	@Test
@@ -42,7 +45,7 @@ public class PageTest {
 	
 	@Test
 	public void shouldSetFirstPage2() {
-		page = new Page(2, 10, 100, emptyList);
+		page = new Page<MyModel>(2, 10, 100, emptyList);
 		assertThat(page.getFirst(), equalTo(10));
 	}
 	
@@ -58,7 +61,7 @@ public class PageTest {
 	
 	@Test
 	public void shouldBeTrueIfIsNotFirstPage() {
-		page.setPageNumber(2);
+		page.setNumber(2);
 		assertThat(page.isFirstPage(), equalTo(false));
 	}
 	
@@ -69,36 +72,41 @@ public class PageTest {
 	
 	@Test
 	public void shouldBeTrueIfIsLastPage() {
-		page.setPageNumber(10);
+		page.setNumber(10);
 		assertThat(page.isLastPage(), equalTo(true));
 	}
 	
 	@Test
 	public void shouldBeTrueIfIsLastPageNotRounded() {
-		page.setPageNumber(10);
+		page.setNumber(10);
 		page.setTotal(101);
 		assertThat(page.isLastPage(), equalTo(true));
 	}
 	
 	@Test
 	public void shouldReturnNextPage() {
-		assertThat(page.getNextPage(), equalTo(2));
+		assertThat(page.getNext(), equalTo(2));
 	}
 	
 	@Test(expected = Exception.class)
 	public void shouldThrowExceptionIfIsLastPage() {
-		page.setPageNumber(10);
-		page.getNextPage();
+		page.setNumber(10);
+		page.getNext();
 	}
 	
 	@Test
 	public void shouldReturnPreviusPage() {
-		page.setPageNumber(10);
-		assertThat(page.getFirstPage(), equalTo(9));
+		page.setNumber(10);
+		assertThat(page.getPrev(), equalTo(9));
 	}
 	
 	@Test(expected = Exception.class)
 	public void shouldThrowExceptionIfIsFirstPage() {
-		page.getFirstPage();
+		page.getPrev();
+	}
+	
+	@Test
+	public void shouldReturnSize() {
+		assertThat(page.getPageSize(), equalTo(10));
 	}
 }

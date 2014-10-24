@@ -23,7 +23,7 @@ public class DefaultLoadAction extends AbstractAction implements LoadAction {
 	}
 
 	@Override
-	public <T> T by(Class<T> type, long id) {
+	public <T> T by(Class<T> type, Object id) {
 		return db().use(find()).by(type, id);
 	}
 

@@ -1,15 +1,14 @@
 package br.com.caelum.vraptor.plus.api.action;
 
-import java.util.List;
-
 import br.com.caelum.vraptor.plus.api.Act;
+import br.com.caelum.vraptor.plus.api.db.pagination.Page;
 
 public interface PaginationAction extends Act {
 
-	<T> List<T> all(Class<T> type);
-
-	PaginationAction page(int first);
+	PaginationAction page(int page);
 
 	PaginationAction limit(int limit);
+
+	<T> Page<T> paginate(Class<T> type);
 	
 }

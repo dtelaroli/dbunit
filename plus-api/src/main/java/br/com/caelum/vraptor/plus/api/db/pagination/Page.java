@@ -1,53 +1,53 @@
-package br.com.caelum.vraptor.plus.action;
+package br.com.caelum.vraptor.plus.api.db.pagination;
 
 import java.util.List;
 
 import javax.enterprise.inject.Vetoed;
 
 @Vetoed
-public class Page {
+public class Page<T> {
 
-	private int pageNumber;
+	private int number;
 	private int limit;
-	private List<Object> list;
+	private List<T> list;
 	private int total;
 
 	public Page() {
 	}
 	
-	public Page(int pageNumber, int limit, int total, List<Object> list) {
-		this.pageNumber = pageNumber;
+	public Page(int pageNumber, int limit, int total, List<T> list) {
+		this.number = pageNumber;
 		this.limit = limit;
 		this.total = total;
 		this.list = list;
 	}
 
-	public int getPageNumber() {
-		return pageNumber;
+	public int getNumber() {
+		return number;
 	}
 
 	public int getLimit() {
 		return limit;
 	}
 
-	public List<Object> getList() {
+	public List<T> getList() {
 		return list;
 	}
 	
-	public void setPageNumber(int pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setNumber(int pageNumber) {
+		this.number = pageNumber;
 	}
 
 	public void setLimit(int limit) {
 		this.limit = limit;
 	}
 
-	public void setList(List<Object> list) {
+	public void setList(List<T> list) {
 		this.list = list;
 	}
 
 	public int getFirst() {
-		return (pageNumber - 1) * limit;
+		return (number - 1) * limit;
 	}
 
 	public int getTotal() {
@@ -59,25 +59,29 @@ public class Page {
 	}
 
 	public boolean isFirstPage() {
-		return pageNumber == 1;
+		return number == 1;
 	}
 
 	public boolean isLastPage() {
-		return pageNumber == total / limit;
+		return number >= total / limit;
 	}
 
-	public int getNextPage() {
+	public int getNext() {
 		if(isLastPage()) {
 			throw new UnsupportedOperationException("Last page");
 		}
-		return pageNumber + 1;
+		return number + 1;
 	}
 
-	public int getFirstPage() {
+	public int getPrev() {
 		if(isFirstPage()) {
 			throw new UnsupportedOperationException("First page");
 		}
-		return pageNumber - 1;
+		return number - 1;
+	}
+
+	public int getPageSize() {
+		return list.size();
 	}
 	
 }
