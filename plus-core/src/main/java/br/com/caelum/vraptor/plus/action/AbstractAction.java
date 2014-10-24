@@ -33,7 +33,7 @@ public abstract class AbstractAction implements Act {
 		throw new UnsupportedOperationException("Not implemented");
 	}
 
-	public <T> T andRedirect(Class<T> controller) {
+	public <T> T andRedirectTo(Class<T> controller) {
 		return result().redirectTo(controller);
 	}
 }

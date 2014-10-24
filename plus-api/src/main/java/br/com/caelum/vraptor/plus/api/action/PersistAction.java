@@ -6,7 +6,7 @@ public interface PersistAction extends Act {
 
 	<T> PersistAction save(T object);
 
-	<T> T andRedirect(Class<T> controller);
+	<T> T andRedirectTo(Class<T> controller);
 	
 	<T> T andReturn();
 

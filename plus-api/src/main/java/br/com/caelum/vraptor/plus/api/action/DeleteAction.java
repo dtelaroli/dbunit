@@ -6,7 +6,7 @@ public interface DeleteAction extends Act {
 
 	<T> DeleteAction by(Class<T> type, Object id);
 
-	<T> T andRedirect(Class<T> controller);
+	<T> T andRedirectTo(Class<T> controller);
 	
 	<T> T andReturn();
 	
