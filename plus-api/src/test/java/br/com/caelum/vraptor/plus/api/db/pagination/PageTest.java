@@ -43,13 +43,7 @@ public class PageTest {
 	
 	@Test
 	public void shouldSetFirstPage1() {
-		assertThat(page.getFirst(), equalTo(0));
-	}
-	
-	@Test
-	public void shouldSetFirstPage2() {
-		page = new Page<MyModel>(2, 2, 10, list);
-		assertThat(page.getFirst(), equalTo(2));
+		assertThat(page.getFirst(), equalTo(1));
 	}
 	
 	@Test

@@ -47,7 +47,7 @@ public class Page<T> {
 	}
 
 	public int getFirst() {
-		return (number - 1) * limit;
+		return 1;
 	}
 
 	public int getTotal() {
