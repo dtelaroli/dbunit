@@ -58,23 +58,23 @@ public class Page<T> {
 		this.total = total;
 	}
 
-	public boolean isFirstPage() {
-		return number == 1;
+	public boolean hasPrev() {
+		return number > 1;
 	}
 
-	public boolean isLastPage() {
-		return number >= total / limit;
+	public boolean hasNext() {
+		return number * limit < total;
 	}
 
 	public int getNext() {
-		if(isLastPage()) {
+		if(!hasNext()) {
 			throw new UnsupportedOperationException("Last page");
 		}
 		return number + 1;
 	}
 
 	public int getPrev() {
-		if(isFirstPage()) {
+		if(!hasPrev()) {
 			throw new UnsupportedOperationException("First page");
 		}
 		return number - 1;
