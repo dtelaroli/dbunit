@@ -14,12 +14,10 @@ public abstract class AbstractAction implements Act {
 		this.db = db;
 	}
 
-	@Override
 	public Database db() {
 		return db;
 	}
 
-	@Override
 	public Result result() {
 		return result;
 	}
