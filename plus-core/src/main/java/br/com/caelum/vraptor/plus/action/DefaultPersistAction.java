@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.plus.api.Database;
 import br.com.caelum.vraptor.plus.api.action.PersistAction;
+import br.com.caelum.vraptor.plus.api.db.IModel;
 
 public class DefaultPersistAction extends AbstractAction implements PersistAction {
 
@@ -25,18 +26,26 @@ public class DefaultPersistAction extends AbstractAction implements PersistActio
 	}
 
 	@Override
-	public <T> PersistAction save(T object) {
-		execute(object);
+	public PersistAction save(IModel object) {
+		objectDb = db().use(persist()).save(object);
 		return this;
 	}
 
-	private <T> void execute(T object) {
-		objectDb = db().use(persist()).save(object);
+	@Override
+	public <T> PersistAction insert(T object) {
+		objectDb = db().use(persist()).insert(object);
+		return this;
+	}
+	
+	@Override
+	public <T> PersistAction update(T object) {
+		objectDb = db().use(persist()).update(object);
+		return this;
 	}
 
 	@Override
 	protected Object dbObject() {
 		return objectDb;
 	}
-	
+
 }

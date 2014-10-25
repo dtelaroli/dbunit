@@ -5,8 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import br.com.caelum.vraptor.plus.api.db.IModel;
+
 @Entity
-public class MyModel {
+public class MyModel implements IModel {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

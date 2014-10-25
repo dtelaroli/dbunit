@@ -8,6 +8,10 @@ import org.junit.Test;
 
 import br.com.caelum.vraptor.plus.api.db.PersistDb;
 import br.com.caelum.vraptor.plus.api.test.MyModel;
+import br.com.caelum.vraptor.plus.dbunit.DbUnit;
+import br.com.caelum.vraptor.plus.dbunit.DbUnitEbean;
+
+import com.avaje.ebean.Ebean;
 
 public class DefaultPersistDbTest {
 
@@ -15,15 +19,27 @@ public class DefaultPersistDbTest {
 	
 	@Before
 	public void setUp() throws Exception {
+		DbUnit dbUnit = new DbUnitEbean();
+		dbUnit.init(MyModel.class);
+		
 		db = new DefaultPersistDb();
 	}
 	
 	@Test
-	public void shouldReturnListOfMyModel() {
+	public void shouldSaveNewMyModel() {
 		MyModel model = new MyModel();
 		model.setName("Foo");
 		model = db.save(model);
 		assertThat(model.getId(), equalTo(4L));
 	}
 
+	@Test
+	public void shouldUpdateMyModel() {
+		MyModel model = new MyModel(1L);
+		model.setName("Bla");
+		db.save(model);
+		
+		model = Ebean.find(MyModel.class, 1L);
+		assertThat(model.getName(), equalTo("Bla"));
+	}
 }

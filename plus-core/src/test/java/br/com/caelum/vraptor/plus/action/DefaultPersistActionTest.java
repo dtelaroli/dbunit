@@ -48,7 +48,7 @@ public class DefaultPersistActionTest {
 
 	@Test
 	public void shouldReturnControllerInstance() {
-		MyController controller = act.save(MyModel.class).andRedirectTo(MyController.class);
+		MyController controller = act.save(model).andRedirectTo(MyController.class);
 		assertThat(controller, instanceOf(MyController.class));
 	}
 	
