@@ -128,4 +128,16 @@ public class PageTest {
 		page.setTotal(2);
 		assertThat(page.hasNext(), equalTo(false));
 	}
+	
+	@Test
+	public void shouldReturnLastPage() {
+		assertThat(page.getLast(), equalTo(5));
+	}
+	
+	@Test
+	public void shouldReturnLastPageTotalEqualLimit() {
+		page.setTotal(3);
+		page.setLimit(2);
+		assertThat(page.getLast(), equalTo(2));
+	}
 }

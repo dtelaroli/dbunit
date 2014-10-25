@@ -83,5 +83,10 @@ public class Page<T> {
 	public int getPageSize() {
 		return list.size();
 	}
+
+	public int getLast() {
+		int last = (int) Math.ceil((double)total / limit);
+		return last == 0 ? 1 : last;
+	}
 	
 }
