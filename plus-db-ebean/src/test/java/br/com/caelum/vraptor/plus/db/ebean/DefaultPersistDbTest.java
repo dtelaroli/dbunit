@@ -16,10 +16,11 @@ import com.avaje.ebean.Ebean;
 public class DefaultPersistDbTest {
 
 	private PersistDb db;
+	private DbUnit dbUnit;
 	
 	@Before
 	public void setUp() throws Exception {
-		DbUnit dbUnit = new DbUnitEbean();
+		dbUnit = new DbUnitEbean();
 		dbUnit.init(MyModel.class);
 		
 		db = new DefaultPersistDb();
@@ -38,6 +39,24 @@ public class DefaultPersistDbTest {
 		MyModel model = new MyModel(1L);
 		model.setName("Bla");
 		db.save(model);
+		
+		model = Ebean.find(MyModel.class, 1L);
+		assertThat(model.getName(), equalTo("Bla"));
+	}
+	
+	@Test
+	public void shouldSaveNewMyModel2() {
+		MyModel model = new MyModel();
+		model.setName("Foo");
+		model = db.insert(model);
+		assertThat(model.getId(), equalTo(5L));
+	}
+
+	@Test
+	public void shouldUpdateMyModel2() {
+		MyModel model = new MyModel(1L);
+		model.setName("Bla");
+		db.update(model);
 		
 		model = Ebean.find(MyModel.class, 1L);
 		assertThat(model.getName(), equalTo("Bla"));

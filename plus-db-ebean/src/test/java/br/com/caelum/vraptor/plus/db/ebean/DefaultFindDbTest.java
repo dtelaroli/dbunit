@@ -57,9 +57,4 @@ public class DefaultFindDbTest {
 		assertThat(page.getPageSize(), equalTo(1));
 	}
 	
-	@Test(expected = Exception.class)
-	public void shouldThrowExceptionIfPageNotExists() {
-		db.paginate(MyModel.class, 3, 2);
-	}
-
 }

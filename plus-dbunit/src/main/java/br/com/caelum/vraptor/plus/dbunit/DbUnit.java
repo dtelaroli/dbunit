@@ -113,7 +113,7 @@ public class DbUnit {
 
 	public void clean() throws DatabaseUnitException, SQLException {
 		for (int i = 0; i < connections.size(); i++) {
-			DatabaseOperation.DELETE_ALL.execute(connections.get(i), dataSets.get(i));
+			DatabaseOperation.DELETE.execute(connections.get(i), dataSets.get(i));
 		}
 	}
 
