@@ -14,7 +14,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<vraptor.version>4.1.1</vraptor.version>
-		<weld.version>2.2.4.Final</weld.version>
+		<weld.version>2.1.2.Final</weld.version>
 		<junit.version>4.11</junit.version>
 		<hamcrest.version>1.3</hamcrest.version>
 		<mockito.version>1.9.5</mockito.version>

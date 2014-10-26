@@ -14,18 +14,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>br.com.caelum</groupId>
-			<artifactId>vraptor</artifactId>
-			<version>4.1.1</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.enterprise</groupId>
-			<artifactId>cdi-api</artifactId>
-			<version>${cdi.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
 			<groupId>br.com.caelum.vraptor</groupId>
 			<artifactId>plus-api</artifactId>
 			<version>${project.parent.version}</version>
@@ -37,7 +25,6 @@
 			<version>${project.parent.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 	
 	<build>

@@ -11,7 +11,7 @@
 	<artifactId>plus</artifactId>
 	<name>plus</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>br.com.caelum.vraptor</groupId>
@@ -19,16 +19,15 @@
 			<version>${project.parent.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.enterprise</groupId>
-			<artifactId>cdi-api</artifactId>
-			<version>${cdi.version}</version>
-			<scope>provided</scope>
+			<groupId>org.jboss.weld.servlet</groupId>
+			<artifactId>weld-servlet</artifactId>
+			<version>${weld.version}</version>
 		</dependency>
-		
 		<dependency>
-			<groupId>br.com.caelum</groupId>
-			<artifactId>vraptor</artifactId>
-			<version>4.1.1</version>
+			<groupId>org.jboss.weld.servlet</groupId>
+			<artifactId>weld-servlet-core</artifactId>
+			<version>${weld.version}</version>
 		</dependency>
+
 	</dependencies>
 </project>
