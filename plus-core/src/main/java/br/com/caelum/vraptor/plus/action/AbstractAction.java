@@ -1,23 +1,26 @@
 package br.com.caelum.vraptor.plus.action;
 
 import br.com.caelum.vraptor.Result;
-import br.com.caelum.vraptor.plus.api.Act;
 import br.com.caelum.vraptor.plus.api.Database;
+import br.com.caelum.vraptor.plus.api.action.Activity;
 
-public abstract class AbstractAction implements Act {
+public abstract class AbstractAction implements Activity {
 
 	private final Result result;
 	private final Database db;
+	private String message;
 
 	public AbstractAction(Result result, Database db) {
 		this.result = result;
 		this.db = db;
 	}
 
+	@Override
 	public Database db() {
 		return db;
 	}
 
+	@Override
 	public Result result() {
 		return result;
 	}
@@ -34,4 +37,17 @@ public abstract class AbstractAction implements Act {
 	public <T> T andRedirectTo(Class<T> controller) {
 		return result().redirectTo(controller);
 	}
+	
+	@Override
+	public AbstractAction withMessage(String message) {
+		this.message = message;
+		result().include("message", message);
+		return this;
+	}
+
+	@Override
+	public String message() {
+		return message;
+	}
+	
 }

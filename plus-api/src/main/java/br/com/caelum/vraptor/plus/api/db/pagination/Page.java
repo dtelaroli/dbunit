@@ -68,14 +68,14 @@ public class Page<T> {
 
 	public int getNext() {
 		if(!hasNext()) {
-			throw new UnsupportedOperationException("Last page");
+			return number;
 		}
 		return number + 1;
 	}
 
 	public int getPrev() {
 		if(!hasPrev()) {
-			throw new UnsupportedOperationException("First page");
+			return number;
 		}
 		return number - 1;
 	}

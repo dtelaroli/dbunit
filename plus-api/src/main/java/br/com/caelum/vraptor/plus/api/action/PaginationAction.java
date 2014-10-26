@@ -1,9 +1,8 @@
 package br.com.caelum.vraptor.plus.api.action;
 
-import br.com.caelum.vraptor.plus.api.Act;
 import br.com.caelum.vraptor.plus.api.db.pagination.Page;
 
-public interface PaginationAction extends Act {
+public interface PaginationAction extends Activity {
 
 	PaginationAction page(int page);
 

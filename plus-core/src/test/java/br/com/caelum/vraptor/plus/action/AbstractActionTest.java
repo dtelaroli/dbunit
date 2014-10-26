@@ -1,5 +1,6 @@
 package br.com.caelum.vraptor.plus.action;
 
+import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
@@ -8,16 +9,19 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.Spy;
 
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.plus.action.AbstractAction;
 import br.com.caelum.vraptor.plus.api.Database;
 import br.com.caelum.vraptor.plus.api.test.MyController;
 import br.com.caelum.vraptor.plus.api.test.MyModel;
+import br.com.caelum.vraptor.util.test.MockResult;
 
 public class AbstractActionTest {
 
 	private AbstractAction act;
-	@Mock private Result result;
+	@Spy private Result result = new MockResult();
 	@Mock private Database db;
 	
 	@Before
@@ -53,4 +57,10 @@ public class AbstractActionTest {
 		assertThat(act.andRedirectTo(MyController.class), instanceOf(MyController.class));
 	}
 
+	@Test
+	public void shouldSetMessage() {
+		assertThat(act.withMessage("foo").message(), equalTo("foo"));
+		assertThat(result.included().get("message"), equalTo("foo"));
+	}
+	
 }

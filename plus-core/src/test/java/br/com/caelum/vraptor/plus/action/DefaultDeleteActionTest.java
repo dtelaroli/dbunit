@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.Spy;
 
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.plus.api.Database;
@@ -18,13 +19,14 @@ import br.com.caelum.vraptor.plus.api.action.DeleteAction;
 import br.com.caelum.vraptor.plus.api.db.DeleteDb;
 import br.com.caelum.vraptor.plus.api.test.MyController;
 import br.com.caelum.vraptor.plus.api.test.MyModel;
+import br.com.caelum.vraptor.util.test.MockResult;
 
 public class DefaultDeleteActionTest {
 
 	private DeleteAction act;
 	@Mock private Database db;
 	@Mock private DeleteDb removeDb;
-	@Mock private Result result;
+	@Spy private Result result = new MockResult();
 	
 	@Before
 	public void setUp() throws Exception {
@@ -49,6 +51,24 @@ public class DefaultDeleteActionTest {
 	public void shouldReturnControllerInstance() {
 		MyController controller = act.by(MyModel.class, 1l).andRedirectTo(MyController.class);
 		assertThat(controller, instanceOf(MyController.class));
+	}
+	
+	@Test
+	public void shouldAddMessageOnSuccess() {
+		act.by(MyModel.class, 1l);
+		assertThat(result.included().get("message"), equalTo("success.delete"));
+	}
+	
+	@Test
+	public void shouldAddMessageChanged() {
+		act.by(MyModel.class, 1l).withMessage("foo");
+		assertThat(result.included().get("message"), equalTo("foo"));
+	}
+	
+	@Test
+	public void shouldSetMessage() {
+		act.withMessage("bar");
+		assertThat(result.included().get("message"), equalTo("bar"));
 	}
 	
 	@Test(expected = Exception.class)

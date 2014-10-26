@@ -1,9 +1,8 @@
 package br.com.caelum.vraptor.plus.api.action;
 
-import br.com.caelum.vraptor.plus.api.Act;
 import br.com.caelum.vraptor.plus.api.db.IModel;
 
-public interface PersistAction extends Act {
+public interface PersistAction extends Activity {
 
 	<T> PersistAction insert(T object);
 	
@@ -11,8 +10,8 @@ public interface PersistAction extends Act {
 
 	PersistAction save(IModel object);
 
-	<T> T andRedirectTo(Class<T> controller);
-	
 	<T> T andReturn();
+
+	<T> T andRedirectTo(Class<T> controller);
 
 }

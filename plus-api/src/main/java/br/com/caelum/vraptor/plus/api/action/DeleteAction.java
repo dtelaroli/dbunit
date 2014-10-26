@@ -1,13 +1,11 @@
 package br.com.caelum.vraptor.plus.api.action;
 
-import br.com.caelum.vraptor.plus.api.Act;
-
-public interface DeleteAction extends Act {
+public interface DeleteAction extends Activity {
 
 	<T> DeleteAction by(Class<T> type, Object id);
 
-	<T> T andRedirectTo(Class<T> controller);
-	
 	<T> T andReturn();
-	
+
+	<T> T andRedirectTo(Class<T> controller);
+
 }

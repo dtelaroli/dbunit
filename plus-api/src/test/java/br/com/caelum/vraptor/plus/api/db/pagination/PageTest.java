@@ -85,21 +85,10 @@ public class PageTest {
 		assertThat(page.getNext(), equalTo(2));
 	}
 	
-	@Test(expected = Exception.class)
-	public void shouldThrowExceptionIfIsLastPage() {
-		page.setNumber(10);
-		page.getNext();
-	}
-	
 	@Test
 	public void shouldReturnPreviusPage() {
 		page.setNumber(10);
 		assertThat(page.getPrev(), equalTo(9));
-	}
-	
-	@Test(expected = Exception.class)
-	public void shouldThrowExceptionIfIsFirstPage() {
-		page.getPrev();
 	}
 	
 	@Test
