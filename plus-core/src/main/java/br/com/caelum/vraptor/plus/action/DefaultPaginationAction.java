@@ -8,22 +8,24 @@ import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.plus.api.Database;
 import br.com.caelum.vraptor.plus.api.action.PaginationAction;
 import br.com.caelum.vraptor.plus.api.db.pagination.Page;
+import br.com.caelum.vraptor.plus.api.db.pagination.DefaultPageConfig;
 
 public class DefaultPaginationAction extends AbstractAction implements PaginationAction {
 
-	private int page = 0;
-	private int limit = 20;
+	private int page = 1;
+	private int limit;
 
 	/**
 	 * @deprecated CDI eyes-only
 	 */
 	protected DefaultPaginationAction() {
-		this(null, null);
+		this(null, null, null);
 	}
 	
 	@Inject
-	public DefaultPaginationAction(Result result, Database db) {
+	public DefaultPaginationAction(Result result, Database db, DefaultPageConfig config) {
 		super(result, db);
+		limit = config.getLimit();
 	}
 
 	@Override
