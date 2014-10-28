@@ -1,4 +1,4 @@
-package br.com.caelum.vraptor.dbunit.api;
+package br.com.caelum.vraptor.dbunit.ebean;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -7,7 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.com.caelum.vraptor.dbunit.api.DbUnit;
-import br.com.caelum.vraptor.dbunit.api.MyModel;
 
 import com.avaje.ebean.Ebean;
 
