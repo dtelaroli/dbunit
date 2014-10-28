@@ -2,15 +2,14 @@
 
 For integration tests
 
-## Install
+## Ebean
 
-```xml
-<dependency>
-	<groupId>br.com.caelum.vraptor</groupId>
-	<artifactId>vraptor-dbunit</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-</dependency>
-```
+https://github.com/dtelaroli/vraptor-dbunit/tree/master/dbunit-ebean
 
-## Usage
+## JPA
 
+Does not implemented yet
+
+## Hibernate
+
+Not implemented yet

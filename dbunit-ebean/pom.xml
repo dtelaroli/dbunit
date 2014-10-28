@@ -10,7 +10,7 @@
 	</parent>
 	<artifactId>dbunit-ebean</artifactId>
 	<name>dbunit-ebean</name>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/dtelaroli/vraptor-dbunit/tree/master/dbunit-ebean</url>
 
 	<dependencies>
 		<dependency>

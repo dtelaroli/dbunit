@@ -10,8 +10,8 @@
 	</parent>
 	<artifactId>dbunit-api</artifactId>
 	<name>dbunit-api</name>
-	<url>https://github.com/dtelaroli/vraptor-dbunit/</url>
-
+	<url>https://github.com/dtelaroli/vraptor-dbunit/tree/master/dbunit-api</url>
+	
 	<build>
 		<plugins>
 			<plugin>
