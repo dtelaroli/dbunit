@@ -40,7 +40,7 @@ For integration tests with Ebean
 
 ### Ebean with H2
 
-File <pre>src/test/resources/ebean.properties</pre>
+File `src/test/resources/ebean.properties`
 
 ```INI
 ebean.ddl.generate=true  
@@ -68,6 +68,14 @@ datasource.h2.maxConnections=25
 datasource.h2.heartbeatsql=select 1  
 datasource.h2.isolationlevel=read_committed  
 ```
+
+### DbUnit Datasets
+
+Default folder: `src/test/resources/datasets`
+
+Create a xml file with model name like this [MyModel.xml](https://github.com/dtelaroli/vraptor-dbunit/blob/master/dbunit-ebean/src/test/resources/datasets/MyModel.xml)
+
+[MyModel.java](https://github.com/dtelaroli/vraptor-dbunit/blob/master/dbunit-ebean/src/main/java/br/com/caelum/vraptor/dbunit/api/MyModel.java)
 
 ## Usage
 
