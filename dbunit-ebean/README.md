@@ -40,7 +40,7 @@ For integration tests with Ebean
 
 ### Ebean with H2
 
-<pre>src/test/resources/ebean.properties</pre>
+File <pre>src/test/resources/ebean.properties</pre>
 
 ```INI
 ebean.ddl.generate=true  
