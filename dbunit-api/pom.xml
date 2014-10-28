@@ -19,7 +19,7 @@
 				<artifactId>avaje-ebeanorm-mavenenhancer</artifactId>
 				<version>${ebean.version}</version>
 				<configuration>
-					<packages>br.com.caelum.vraptor.dbunit.api.**</packages>
+					<packages>models.**</packages>
 					<transformArgs>debug=1</transformArgs>
 				</configuration>
 

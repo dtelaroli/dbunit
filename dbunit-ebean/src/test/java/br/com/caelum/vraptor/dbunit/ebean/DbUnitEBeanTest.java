@@ -2,6 +2,7 @@ package br.com.caelum.vraptor.dbunit.ebean;
 
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertThat;
+import models.MyModel;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -3,6 +3,7 @@ package br.com.caelum.vraptor.dbunit.api;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
+import models.MyModel;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -16,7 +16,7 @@
 		<junit.version>4.11</junit.version>
 		<hamcrest.version>1.3</hamcrest.version>
 		<mockito.version>1.9.5</mockito.version>
-		<ebean.version>4.1.6</ebean.version>
+		<ebean.version>4.1.8</ebean.version>
 		<ebean-agent.version>1.1.2</ebean-agent.version>
 		<dbunit.version>2.5.0</dbunit.version>
 		<h2.version>1.4.181</h2.version>
@@ -81,7 +81,7 @@
 				<version>2.4</version>
 				<configuration>
 					<excludes>
-						<exclude>**MyModel.java*</exclude>
+						<exclude>models/*</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
