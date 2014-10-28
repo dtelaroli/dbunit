@@ -25,5 +25,5 @@ public class DbUnitEBeanTest {
 		
 		assertThat(Ebean.find(MyModel.class, 1L), instanceOf(MyModel.class));
 	}
-
+	
 }

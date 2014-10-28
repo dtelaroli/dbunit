@@ -34,9 +34,8 @@ public class DbUnit {
 		this.conn = conn;
 	}
 
-	@SafeVarargs
-	public final <T> void init(Class<T>... types) throws Exception {
-		for (Class<T> type : types) {
+	public void init(Class<?>... types) throws Exception {
+		for (Class<?> type : types) {
 			initOne(type);
 		}
 	}

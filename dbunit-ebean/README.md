@@ -138,17 +138,13 @@ Create a xml file with model name like this [MyModel.xml](https://github.com/dte
 ```Java
 public class DbUnitEBeanTest {
 
-	private DbUnit db;
-	
-	@Before
-	public void setUp() throws Exception {
-		db = new DbUnitEbean();
+	@BeforeClass
+	public static void beforeClass() throws Exception {
+		new DbUnitEbean().init(MyModel.class);
 	}
 	
 	@Test
 	public void shouldInitTableMyModel() throws Exception {
-		db.init(MyModel.class);
-		
 		assertThat(Ebean.find(MyModel.class, 1L), instanceOf(MyModel.class));
 	}
 
