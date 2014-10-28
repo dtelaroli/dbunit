@@ -38,6 +38,62 @@ For integration tests with Ebean
 </dependency>
 ```
 
+### Ebean Maven Enhancer Plugin
+
+```xml
+<build>
+	<plugins>
+		<plugin>
+			<groupId>org.avaje.ebeanorm</groupId>
+			<artifactId>avaje-ebeanorm-mavenenhancer</artifactId>
+			<version>${ebean.version}</version>
+			<configuration>
+				<packages>you.package.**</packages>
+				<transformArgs>debug=1</transformArgs>
+			</configuration>
+			<executions>
+				<execution>
+					<id>main</id>
+					<phase>process-classes</phase>
+					<goals>
+						<goal>enhance</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+	</plugins>
+	<pluginManagement>
+		<plugins>
+			<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+			<plugin>
+				<groupId>org.eclipse.m2e</groupId>
+				<artifactId>lifecycle-mapping</artifactId>
+				<version>1.0.0</version>
+				<configuration>
+					<lifecycleMappingMetadata>
+						<pluginExecutions>
+							<pluginExecution>
+								<pluginExecutionFilter>
+									<groupId>org.avaje.ebeanorm</groupId>
+									<artifactId>avaje-ebeanorm-mavenenhancer</artifactId>
+									<versionRange>[${ebean.version},)</versionRange>
+									<goals>
+										<goal>enhance</goal>
+									</goals>
+								</pluginExecutionFilter>
+								<action>
+									<execute></execute>
+								</action>
+							</pluginExecution>
+						</pluginExecutions>
+					</lifecycleMappingMetadata>
+				</configuration>
+			</plugin>
+		</plugins>
+	</pluginManagement>		
+</build>
+```
+
 ### Ebean with H2
 
 File `src/test/resources/ebean.properties`

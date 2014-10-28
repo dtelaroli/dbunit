@@ -88,15 +88,9 @@
 							<pluginExecutions>
 								<pluginExecution>
 									<pluginExecutionFilter>
-										<groupId>
-											org.avaje.ebeanorm
-										</groupId>
-										<artifactId>
-											avaje-ebeanorm-mavenenhancer
-										</artifactId>
-										<versionRange>
-											[${ebean.version},)
-										</versionRange>
+										<groupId>org.avaje.ebeanorm</groupId>
+										<artifactId>avaje-ebeanorm-mavenenhancer</artifactId>
+										<versionRange>[${ebean.version},)</versionRange>
 										<goals>
 											<goal>enhance</goal>
 										</goals>
