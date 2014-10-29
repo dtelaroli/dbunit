@@ -8,14 +8,16 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateConnection {
 
+	private SessionFactory sessionFactory;
+	private StandardServiceRegistry serviceRegistry;
+
 	public HibernateConnection() {
+		Configuration configuration = getConfiguration();
+		serviceRegistry = getServiceRegistry(configuration);
+		sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 	}
 	
 	public Session getSession() {
-		Configuration configuration = getConfiguration();
-		StandardServiceRegistry serviceRegistry = getServiceRegistry(configuration);
-		SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-		
 		return sessionFactory.openSession();
 	}
 
