@@ -30,12 +30,6 @@ For integration tests with Ebean
 	<artifactId>h2</artifactId>
 	<version>${h2.version}</version>
 </dependency>
-<!-- Ebean Implementation -->
-<dependency>
-	<groupId>org.avaje.ebeanorm</groupId>
-	<artifactId>avaje-ebeanorm</artifactId>
-	<version>${ebean.version}</version>
-</dependency>
 ```
 
 ### Ebean Maven Enhancer Plugin

@@ -30,12 +30,6 @@ For integration tests with Hibernate
 	<artifactId>h2</artifactId>
 	<version>${h2.version}</version>
 </dependency>
-<!-- Hibernate Implementation -->
-<dependency>
-	<groupId>org.hibernate</groupId>
-	<artifactId>hibernate-core</artifactId>
-	<version>${hibernate.version}</version>
-</dependency>
 ```
 
 ### Hibernate with H2
