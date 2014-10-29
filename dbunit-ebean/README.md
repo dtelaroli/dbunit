@@ -1,4 +1,4 @@
-# VRaptor DBUnit Ebean Implementation
+# DBUnit Ebean Implementation
 
 For integration tests with Ebean
 
@@ -48,7 +48,7 @@ For integration tests with Ebean
 			<artifactId>avaje-ebeanorm-mavenenhancer</artifactId>
 			<version>${ebean.version}</version>
 			<configuration>
-				<packages>you.package.**</packages>
+				<packages>you.package.model.**</packages>
 				<transformArgs>debug=1</transformArgs>
 			</configuration>
 			<executions>
@@ -129,9 +129,9 @@ datasource.h2.isolationlevel=read_committed
 
 Default folder: `src/test/resources/datasets`
 
-Create a xml file with model name like this [MyModel.xml](https://github.com/dtelaroli/vraptor-dbunit/blob/master/dbunit-ebean/src/test/resources/datasets/MyModel.xml)
+Create a xml file with model name like this [MyModel.xml](https://github.com/dtelaroli/dbunit/blob/master/dbunit-ebean/src/test/resources/datasets/MyModel.xml)
 
-[MyModel.java](https://github.com/dtelaroli/vraptor-dbunit/blob/master/dbunit-ebean/src/main/java/br/com/caelum/vraptor/dbunit/api/MyModel.java)
+[MyModel.java](https://github.com/dtelaroli/vraptor-dbunit/blob/master/ebean/src/main/java/br/com/caelum/vraptor/dbunit/api/MyModel.java)
 
 ## Usage
 

@@ -12,6 +12,15 @@
 	<name>dbunit-api</name>
 	<url>https://github.com/dtelaroli/vraptor-dbunit/tree/master/dbunit-api</url>
 	
+	<dependencies>
+		<dependency>
+			<groupId>org.avaje.ebeanorm</groupId>
+			<artifactId>avaje-ebeanorm</artifactId>
+			<version>${ebean.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
 	<build>
 		<plugins>
 			<plugin>

@@ -1,15 +1,15 @@
-# VRaptor DBUnit Helper
+# DBUnit Helper
 
 For integration tests
 
 ## Ebean
 
-https://github.com/dtelaroli/vraptor-dbunit/tree/master/dbunit-ebean
+https://github.com/dtelaroli/dbunit/tree/master/dbunit-ebean
 
 ## JPA
 
-Does not implemented yet
+Not implemented yet
 
 ## Hibernate
 
-Not implemented yet
+https://github.com/dtelaroli/dbunit/tree/master/dbunit-hibernate
