@@ -55,17 +55,8 @@ File `src/test/resources/hibernate.cfg.xml`
         <property name="hibernate.connection.username">sa</property>
         <property name="hibernate.connection.password"></property>
 
-        <!-- JDBC connection pool (use the built-in) -->
-        <property name="hibernate.connection.pool_size">1</property>
-
         <!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
-
-        <!-- Enable Hibernate's automatic session context management -->
-        <property name="hibernate.current_session_context_class">thread</property>
-
-        <!-- Disable the second-level cache  -->
-        <property name="hibernate.cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
 
         <!-- Echo all executed SQL to stdout -->
         <property name="hibernate.show_sql">true</property>
@@ -73,6 +64,7 @@ File `src/test/resources/hibernate.cfg.xml`
         <!-- Drop and re-create the database schema on startup -->
         <property name="hibernate.hbm2ddl.auto">update</property>
 
+		<!-- Your models -->
         <mapping class="models.MyModel"/>
     </session-factory>
 </hibernate-configuration>
