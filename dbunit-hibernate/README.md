@@ -11,12 +11,12 @@ For integration tests with Hibernate
 	<!-- Or latest -->
 	<dbunit.version>2.5.0</dbunit.version>
 	<h2.version>1.4.181</h2.version>
-	<ebean.version>4.1.6</ebean.version>
+	<hibernate.version>4.3.6</hibernate.version>
 </properties>
 	
 <dependency>
 	<groupId>br.com.caelum.vraptor</groupId>
-	<artifactId>dbunit-ebean</artifactId>
+	<artifactId>dbunit-hibernate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 </dependency>
 
@@ -30,11 +30,11 @@ For integration tests with Hibernate
 	<artifactId>h2</artifactId>
 	<version>${h2.version}</version>
 </dependency>
-<!-- Ebean Implementation -->
+<!-- Hibernate Implementation -->
 <dependency>
-	<groupId>org.avaje.ebeanorm</groupId>
-	<artifactId>avaje-ebeanorm</artifactId>
-	<version>${ebean.version}</version>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-core</artifactId>
+	<version>${hibernate.version}</version>
 </dependency>
 ```
 
@@ -43,6 +43,39 @@ For integration tests with Hibernate
 File `src/test/resources/hibernate.cfg.xml`
 
 ```xml
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.h2.Driver</property>
+        <property name="hibernate.connection.url">jdbc:h2:mem:tests;DB_CLOSE_DELAY=-1</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password"></property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="hibernate.connection.pool_size">1</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="hibernate.cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping class="models.MyModel"/>
+    </session-factory>
+</hibernate-configuration>
 
 ```
 
