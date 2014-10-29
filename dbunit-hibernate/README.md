@@ -94,12 +94,6 @@ public class DbUnitHibernateTest {
 	}
 
 	@Test
-	public void shouldReturnSession() {
-		assertThat(session, instanceOf(Session.class));
-		assertThat(session.isOpen(), equalTo(true));
-	}
-	
-	@Test
 	public void shouldInitDataBase() throws Exception {
 		db.init(MyModel.class);
 		
