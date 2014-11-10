@@ -9,6 +9,7 @@
         <property name="hibernate.connection.url">jdbc:h2:mem:tests;DB_CLOSE_DELAY=-1</property>
         <property name="hibernate.connection.username">sa</property>
         <property name="hibernate.connection.password"></property>
+        <property name="hibernate.current_session_context_class">thread</property>
 
         <!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
@@ -17,7 +18,7 @@
         <property name="hibernate.show_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
 
 		<!-- Your models -->
         <mapping class="models.MyModel"/>

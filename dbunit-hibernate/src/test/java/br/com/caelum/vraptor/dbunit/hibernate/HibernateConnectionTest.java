@@ -38,7 +38,7 @@ public class HibernateConnectionTest {
 		Transaction tx = session.beginTransaction();
 		MyModel merge = (MyModel) session.merge(model);
 		tx.commit();
-		assertThat(merge.getId(), equalTo(3L));
+		assertThat(merge.getId(), equalTo(1L));
 	}
 
 }

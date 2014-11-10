@@ -19,8 +19,12 @@ public class DbUnitHibernateTest {
 	public void setUp() throws Exception {
 		db = new DbUnitHibernate();
 		session = db.getSession();
+		
+		Transaction tx = session.beginTransaction();
+		db.init(MyModel.class);
+		tx.commit();
 	}
-
+	
 	@Test
 	public void shouldReturnSession() {
 		assertThat(session, instanceOf(Session.class));
@@ -29,8 +33,6 @@ public class DbUnitHibernateTest {
 	
 	@Test
 	public void shouldInitDataBase() throws Exception {
-		db.init(MyModel.class);
-		
 		MyModel model = (MyModel) session.load(MyModel.class, 1L);
 		assertThat(model, instanceOf(MyModel.class));
 		assertThat(model.getName(), equalTo("Name 1"));
@@ -38,8 +40,6 @@ public class DbUnitHibernateTest {
 	
 	@Test
 	public void shouldInsertItem() throws Exception {
-		db.init(MyModel.class);
-		
 		MyModel model = new MyModel();
 		model.setName("Name 2");
 		
