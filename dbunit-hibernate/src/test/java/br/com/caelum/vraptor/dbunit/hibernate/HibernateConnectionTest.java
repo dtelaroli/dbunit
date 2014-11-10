@@ -31,14 +31,14 @@ public class HibernateConnectionTest {
 	}
 	
 	@Test
-	public void shouldInsertModel() {
+	public void shouldUpdateModel() {
 		MyModel model = new MyModel();
-		model.setName("Name");
+		model.setName("Name updated");
 		
 		Transaction tx = session.beginTransaction();
 		MyModel merge = (MyModel) session.merge(model);
 		tx.commit();
-		assertThat(merge.getId(), equalTo(1L));
+		assertThat(merge.getId(), equalTo(3L));
 	}
 
 }
