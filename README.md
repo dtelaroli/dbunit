@@ -1,7 +1,4 @@
 [![Build Status](https://travis-ci.org/dtelaroli/dbunit.png?branch=master)](https://travis-ci.org/dtelaroli/dbunit)
-dbunit
-=====
-
 
 # DBUnit Helper
 
