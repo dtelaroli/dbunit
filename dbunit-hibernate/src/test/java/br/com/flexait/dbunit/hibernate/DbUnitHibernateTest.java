@@ -1,4 +1,4 @@
-package br.com.caelum.vraptor.dbunit.hibernate;
+package br.com.flexait.dbunit.hibernate;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.instanceOf;
@@ -9,6 +9,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
+
+import br.com.flexait.dbunit.hibernate.DbUnitHibernate;
 
 public class DbUnitHibernateTest {
 

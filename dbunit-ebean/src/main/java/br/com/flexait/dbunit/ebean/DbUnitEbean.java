@@ -1,8 +1,8 @@
-package br.com.caelum.vraptor.dbunit.ebean;
-
-import br.com.caelum.vraptor.dbunit.api.DbUnit;
+package br.com.flexait.dbunit.ebean;
 
 import com.avaje.ebean.Ebean;
+
+import br.com.flexait.dbunit.api.DbUnit;
 
 public class DbUnitEbean extends DbUnit {
 	

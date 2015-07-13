@@ -1,4 +1,4 @@
-package br.com.caelum.vraptor.dbunit.api;
+package br.com.flexait.dbunit.api;
 
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.nullValue;
@@ -9,6 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.avaje.ebean.Ebean;
+
+import br.com.flexait.dbunit.api.DbUnit;
 
 public class DbUnitTest {
 

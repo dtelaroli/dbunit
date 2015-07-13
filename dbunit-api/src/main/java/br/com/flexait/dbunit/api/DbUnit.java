@@ -1,4 +1,4 @@
-package br.com.caelum.vraptor.dbunit.api;
+package br.com.flexait.dbunit.api;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

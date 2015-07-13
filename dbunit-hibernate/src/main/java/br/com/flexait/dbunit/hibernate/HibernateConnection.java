@@ -1,4 +1,4 @@
-package br.com.caelum.vraptor.dbunit.hibernate;
+package br.com.flexait.dbunit.hibernate;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

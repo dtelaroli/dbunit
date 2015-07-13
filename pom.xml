@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.caelum.vraptor</groupId>
 	<artifactId>dbunit-parent</artifactId>
@@ -61,6 +62,27 @@
 
 	</dependencies>
 
+	<scm>
+		<connection>scm:git:https://github.com/flexait/dbunit.git</connection>
+		<developerConnection>scm:git:git@github.com:flexait/dbunit.git</developerConnection>
+		<url>git@github.com:flexait/dbunit</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>dtelaroli</id>
+			<email>denilson.silva@flexait.com.br</email>
+			<name>Denilson Telaroli</name>
+			<organization>Flexa IT</organization>
+			<organizationUrl>http://www.flexait.com.br</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>-3</timezone>
+		</developer>
+	</developers>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -104,7 +126,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<execute/>
+										<execute />
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
@@ -118,7 +140,7 @@
 	<modules>
 		<module>dbunit-api</module>
 		<module>dbunit-ebean</module>
-    <module>dbunit-hibernate</module>
-  </modules>
+		<module>dbunit-hibernate</module>
+	</modules>
 
 </project>
